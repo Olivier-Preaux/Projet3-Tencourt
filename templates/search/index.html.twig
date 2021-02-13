@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche • Tencourt{% endblock %}
+
+{% block body %}
+    <div class="backgroundSearchUsers">
+        <h1 class="searchPlayersTitle">Recherche de joueurs</h1>
+        {{ form_start(searchForm) }}
+            <div class="containerSearchUsers">
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.level, ) }}
+                </div>
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.sex,) }}
+                </div>
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.min, ) }}
+                </div>
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.max, ) }}
+                </div>
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.city, ) }}
+                </div>
+                <button class="searchFormUserButton">Rechercher</button>
+                <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+            </div>
+        {{ form_end(searchForm) }}
+
+        {% if not users is same as null %}
+            <div class='searchcontainer'>
+                <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
+                {% for user in users %}
+                    <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
+                        <div class='players'>
+                            {% if user.avatar == null %}
+                                <img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+                            {% else %}
+                                <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+                            {% endif %}
+                            <div class="container_1_players">
+                                <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                                <p class='playerItem playerSex'>{{user.sex}}</p>
+                                <p class='playerItem playerAge'>{{user.age}} ans</p>
+                                <p class='playerItem playerLevel'>{{user.level}}</p>
+                                <p class='playerItem playerLevel'>{{user.city}}</p>
+                            </div>
+                        </div>
+                    </a>
+                {% else %}
+                    <div class="containerResultSearchMessage">
+                        <p class="resultSearchMessage">Il n'y a pas de résultat pour votre recherches</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="blankShowUserPage"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<div class="editionForm">
+    {{ form_start(editUserForm) }}
+    <div class="containerEditionForm">
+        <div class="editionItemForm editionItemEmail">
+            {{ form_row(editUserForm.email) }}
+        </div>
+         <div class="editionItemForm">
+            {{ form_row(editUserForm.firstname) }}
+        </div>
+         <div class="editionItemForm">
+            {{ form_row(editUserForm.lastname) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.pseudo) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.sex) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.level) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.address) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.postalcode) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.city) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.phone) }}
+        </div>
+        <div class="editionBirtdateForm">
+            {{ form_row(editUserForm.birthdate) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.description,{ 'attr': {'cols': '30', 'rows': '10' } }) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.update) }}
+        </div>
+        {{ form_end(editUserForm) }}
+            <a class="backButtonEditProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+            <a class="EditAccueilButton" href="{{ path('user_index') }}">Accueil</a>
+            <div class="DeleteButtonEditProfile">{{ include('user/_delete_form.html.twig') }}</div>
+            {# <a class="DeleteButtonEditProfile" href="{{ path('user_delete', {'id': user.id}) }}">Supprimer</a> #}
+    </div>
+</div>
+

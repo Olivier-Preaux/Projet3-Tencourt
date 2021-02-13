@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Matchs • Tencourt{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>StartHour</th>
+                <th>EndHour</th>
+                <th>Name</th>
+                <th>Adress</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tennis_match in tennis_matches %}
+            <tr>
+                <td>{{ tennis_match.id }}</td>
+                <td>{{ tennis_match.eventDate ? tennis_match.eventDate|date('d-m-Y') : ''}}</td>
+                <td>{{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</td>
+                <td>{{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</td>
+                <td>{{ tennis_match.name }}</td>
+                <td>{{ tennis_match.adress }}</td>
+                <td>{{ tennis_match.description }}</td>
+                <td>
+                    <a href="{{ path('user_match_show', { 'tennisMatch' : tennis_match.id, 'user' : tennis_match.organizer.id }) }}">show</a>
+                    <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> 
+
+    <a href="{{ path('tennis_match_new') }}">Create new</a>
+{% endblock %}

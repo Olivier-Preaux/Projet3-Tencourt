@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil • Tencourt{% endblock %}
+
+{% block body %}
+    <div class="containerMyProfile">
+        {% for message in app.flashes('success') %}
+                <div id="updateMessageSuccess" >
+                    <p class="successModifiedMessage">{{ message }}</p>
+                </div>
+                <script language='javascript'>
+                    temp=document.getElementById('updateMessageSuccess');
+                    setTimeout('temp.style.display="none"',3000);
+                </script>
+        {% endfor %}
+        <h1 class="myProfileTitle">Mon compte</h1>
+        <div class="MyProfile">
+            {% if user.avatar == NULL  %}
+                <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+                <a class="ModifyAvatarButtonMyProfile" id= "editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+            {% else %}
+                <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+                <a class="ModifyAvatarButtonMyProfile" id= "editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+            {% endif %}
+            <div class="myProfilePseudo">
+                {{ user.pseudo}}
+            </div>
+            <div class="myProfileEmail">
+                <p class="myProfileEmailTitle">Email</p>
+                <p class="myProfileEmailValue">{{ user.email}}</p>
+            </div>
+            {% if user.firstname %}
+            <div class="myProfileFirstname">
+                <p class="myProfileFirstnameTitle">Prénom</p>
+                <p class="myProfileFirstnameValue">{{user.firstname}}</p>
+            </div>
+            {% endif %}
+            {% if user.lastname %}
+            <div class="myProfileName">
+                <p class="myProfileNameTitle">Nom</p>
+                <p class="myProfileNameValue">{{user.lastname}}</p>
+            </div>
+            {% endif %}
+            <div class="myProfileBirthday">
+                <p class="myProfileBirthdateTitle">Date de naissance</p>
+                <p class="myProfileBirthdayValue">{{ user.birthdate|date('d/m/Y') }}</p>
+            </div>
+            {% if user.phone %}
+            <div class="myProfilePhone">
+                <p class="myProfilePhoneTitle">Numero de téléphone</p>
+                <p class="myProfilePhoneValue">{{ user.phone }}</p>
+            </div>
+            {% endif %}
+            <div class="myProfileAdress">
+            <p class="myProfileAddressTitle">Adresse postale</p>
+                <p class="myProfileAddressValue">
+                    {{ user.address}}
+                    {{ user.postalcode}}
+                    {{ user.city }}
+                </p>
+            </div>
+        </div>
+        <div class="myProfileContainerButtons">
+            <div class="myProfileEdition">
+                <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
+            </div>
+        </div>
+         <div class="myProfileContainerButtons">
+            <div class="myProfileEdition">
+                <a class="myProfileEditButton" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mon mot de passe</a>
+            </div>
+        </div>
+        <div class="myProfileMatchButton">
+            <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes créations de matchs</a>
+        </div>
+        <div class="myProfileParticipationsButton">
+            <a href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Mes participations</a>
+        </div>
+        <div class="myProfileDeconnexion">
+            <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+        <div class="blankMyProfilePage"></div>
+    </div>
+
+{% endblock %}

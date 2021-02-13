@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche de matchs • TenCourt{% endblock %}
+
+{% block body %}
+    <h1 class="searchMatchesTitle">Recherche de matches</h1>
+   <div class="backgroundSearchMatchs">
+        <div class="containerSearchMatchForm">
+        {{ form_start(searchMatchForm) }}
+            <div class="containerSearchMatchs">
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.adress) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.level) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.min) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.max) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.startHour) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.endHour) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    <a>{{ form_row(searchMatchForm.save)}}</a>
+                </div>
+                <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+            </div>
+        {{ form_end(searchMatchForm) }}
+        </div>
+
+        {% if not matchs is same as null %}
+            <div class="ContainerSearchMatchResult">
+                <h2 class='resultSearch'>Résultat de votre Recherche</h2>   
+                {% for match in matchs %}
+                <div class="containerMatchsResult">
+                    <div class="containerSearchMatchOrganizerName">
+                        <p class="itemMatchOrganizerResult"><span class="titleItemMatchOrganizerResult">Organisateur:</span> {{ match.organizer.pseudo }}</p>
+                    </div>
+                    <div class="containerSearchMatchName">
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">Nom de l'évènement:</span> {{ match.name }}</p>
+                    </div>
+                        <div class="containerSearchMatchLevel">
+                            <p class="itemMatchResult"><span class="titleItemMatchResult">Niveau:</span> {{ match.level }}</p>
+                        </div>
+                    <div class="containerSearchMatchDate">
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">Date:</span> {{ match.eventDate ? match.eventDate|date('d/m/Y') }}</p>
+                    </div>
+                    <div class="containerHourDateStartEnd">
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">De:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">À:</span> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>    
+                    </div>
+                    <div class="containerSearchMatchAddress">     
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">Lieu:</span> {{ match.adress }}</p>
+                    </div>
+                    <div class="containerSearchMatchDescription">  
+                        <p class="itemMatchResult"><span class="titleItemMatchResult">Description:</span> {{ match.description }}</p><br>
+                    </div>
+                    <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
+                </div>
+                {% else %}
+                    <div class="containerResultSearchMessage">
+                        <p class="resultSearchMessage">Il n'y a pas de résultat pour votre recherche</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="blankShowTennisMatchPage"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="editionForm">
+    {{ form_start(formAvatar) }}
+    <div class="containerEditionFormAvatar">
+        <div class="editionItemFormAvatar">
+            {{ form_row(formAvatar.avatar) }}
+        </div>
+        <div class="editionButtonsFormAvatar">
+            <div class="updateButtonAvatar">{{ form_row(formAvatar.update) }}</div>
+            <a class="backButtonEditAvatar" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+            <a class="EditAccueilButtonAvatar" href="{{ path('user_index') }}">Accueil</a>
+        </div>
+    </div>
+    {{ form_end(formAvatar) }}
+</div>
+

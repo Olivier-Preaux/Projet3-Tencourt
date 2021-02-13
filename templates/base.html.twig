@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
+    <title>{% block title %}TenCourt{% endblock %}</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+
+
+{% block body %}
+
+{% endblock %}
+
+{% block navbar %}
+    <nav class="containerNavbar">
+        <ul class="navbar">
+            <a href="{{ path('tennis_match_new', {'slug': app.user.slug}) }}"><li class="addAnnounce"><img class="logoNavBar" src="{{ app.request.pathinfo == path('tennis_match_new',{'slug': app.user.slug}) ? asset('build/images/navbar/active/addactive.png') : asset('build/images/navbar/add.png') }}"></li></a>
+            <a href="{{ path('search_users') }}"><li class="search"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_users') ? asset('build/images/navbar/active/searchactive.png') : asset('build/images/navbar/search.png') }}"></li></a>
+            <a href="{{ path('search_matches') }}"><li class="location"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_matches') ? asset('build/images/navbar/active/locationactive.png') : asset('build/images/navbar/location.png') }}"></li></a>
+            <a href="{{ path('user_profile', {'slug': app.user.slug}) }}"><li class="userDirection"><img class="logoNavBar" src="{{ app.request.pathinfo == path('user_profile', {'slug': app.user.slug}) ? asset('build/images/navbar/active/profileactive.png') : asset('build/images/navbar/profile.png') }}"></li></a>
+        </ul>
+    </nav>
+{% endblock %}
+</body>
+</html>

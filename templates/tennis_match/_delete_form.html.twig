@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('tennis_match_delete', {'id': tennis_match.id, 'slug': tennis_match.organizer.slug}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tennis_match.id) }}">
+    <button class="btn">Supprimer le match</button>
+</form>

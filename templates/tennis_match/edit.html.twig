@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le match Match • TenCourt{% endblock %}
+
+{% block body %}
+
+<h1 class="editMatchTitleForm">Modfier mon match</h1>
+<div class='backgroundMatchEdit'>
+    <div class="editMatchPage">
+        <div class="editMatchForm">
+            {{ form_start(formEditMatch) }}
+            <div class="containerCreationMatchForm">
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.name) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.level) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.eventDate) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.startHour) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.endHour) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.adress) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.description) }}
+                </div>
+              <div class="containerButtonEditMatch">
+                    <button class="UpdateButtonEditMatch">{{ button_label|default('Mettre à jour') }}</button>
+                    <a class="backButtonEditTennisMatch" href="{{ path('search_matches') }}">Retour</a>
+                </div>    
+            </div>
+            {{ form_end(formEditMatch) }}
+        </div>
+        <div class="blankEditionMatchPage"></div>
+    </div>
+</div>
+{% endblock %}

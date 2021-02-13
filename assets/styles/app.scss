@@ -1,0 +1,2011 @@
+@import 'variables.scss';
+
+@font-face {
+    font-family: "Excellence";
+    src:url("../Fonts/Excellence.otf") format("opentype");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(360, 100%, 100%);
+    display: flex;
+    flex-direction: column;
+    color: black;  
+    font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
+}
+
+//LOGIN
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.subscriptionPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("../../assets/images/backgroundImages/subscription.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.homepageLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.containerLoginWelcomeMessage {
+    margin-bottom: 20px;
+}
+.containerLoginWelcomeMessage p {
+    text-align: center;
+}
+.containerLoginForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 40px;
+    margin-bottom: 120px;
+}
+.loginConnected {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.loginTitleForm {
+    align-self: center;
+}
+.LoginPasswordInput, .LoginEmailInput {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.loginLabelPassword, .loginLabelEmail {
+    margin-top: 20px;
+}
+.LoginSubmitButton {
+    border-radius: 10px;
+    margin: 15px 0;
+    background-color: hsl(128, 56%, 52%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem; 
+    border: solid 2px rgb(13, 170, 26);      
+}
+.containerLoginForm .alert {
+    text-align: center;
+    color: red;
+}
+.containerAuthButtons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.submitConnexion {
+    background-color: hsl(128, 56%, 52%);
+    font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
+    font-size: 1rem;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: solid 2px hsl(125, 86%, 36%);
+}
+.submitConnexion a {
+    color: white;
+    text-decoration: none;
+}
+.loggedPageLogoutButton {
+    align-self: center;
+}
+.subscriptionForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.subscriptionTitleForm {
+    align-self: center;
+}
+.subscriptionText {
+    text-align: center;
+}
+.registrationItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.registrationItemForm li {
+    color: red;
+    text-align: center;
+    list-style-type: none;
+}
+.registrationItemForm label {
+    text-align: center;
+}
+.registrationItemForm, .registrationBirtdateForm, .registrationAgreeTermsForm {
+    margin: 10px 0px;
+}
+.registrationBirtdateForm label {
+    display: flex;
+    justify-content: center;
+}
+.loginLabelEmail, .loginLabelPassword {
+    align-self: center;
+    text-align: center;
+}
+#inputEmail, #inputPassword, #registration_form_email, #registration_form_pseudo, #registration_form_city,
+#registration_form_plainPassword_first, #registration_form_plainPassword_second, #registration_form_sex {
+    text-align: center;
+}
+#registration_form_email {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_plainPassword_first {
+    padding: 10px 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_plainPassword_second {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_pseudo {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_level {
+    padding: 10px 85px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+}
+#registration_form_sex {
+    padding: 10px 95px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_city {
+    padding: 10px 55px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_birthdate_day, #registration_form_birthdate_month, #registration_form_birthdate_year {
+    padding: 10px 20px;
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    border: solid 2px hsl(125, 86%, 36%);
+}
+.registrationAgreeTermsForm {
+    display: flex;
+    justify-content:center;
+}
+.registrationBirtdateForm {
+    display: flex;
+    justify-content:center;
+}
+#registration_form_save {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 100px;
+    border: none;
+    border: solid 2px hsl(125, 86%, 36%);
+}
+.registrationBackButton, .subscriptionBackButton {
+    text-align: center;
+    margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+    #registration_form_email, #registration_form_plainPassword_first,
+    #registration_form_plainPassword_second, #registration_form_pseudo, #registration_form_sex,
+    #registration_form_level, #registration_form_city {
+        width: 90%;
+    }
+}
+@media (min-width: 500px) {
+    .subscriptionPage {
+        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+    }
+}
+//MY PROFILE
+.containerMyProfile {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.myProfileTitle {
+    z-index: 1;
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.MyProfile {
+    display: flex;
+    flex-direction: column;
+}
+.myProfilePicture {
+    margin-top: 100px;
+    margin-bottom: 15px;
+    align-self: center;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+}
+.myProfilePseudo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.myProfileEmailTitle, .myProfileBirthdateTitle, .myProfilePhoneTitle, .myProfileAddressTitle, .myProfileFirstnameTitle, .myProfileNameTitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.myProfileEmail, .myProfileBirthday, .myProfilePhone, .myProfileAdress, .myProfileFirstname, .myProfileName {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.myProfileEmailValue, .myProfileBirthdayValue, .myProfilePhoneValue, .myProfileAddressValue, .myProfileFirstnameValue, .myProfileNameValue {
+    padding: 10px;
+    background-color: hsl(120, 100%, 97%);
+}
+
+.myProfileEdition {
+    text-align: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;}
+
+.containerEditAvatarBackground{
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.ModifyAvatarButtonMyProfile {
+    align-self: center;
+    color: white;
+    position: relative;
+    bottom: 40px;
+}
+.myProfileAvatarEdit {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.editionItemForm {
+    margin: 5px 0px 10px 0px;
+}
+.editionItemFormAvatar  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar div  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#avatar_avatar {
+    margin-top: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    border-radius: 10px;
+    width: 280px;
+}
+.editionButtonsFormAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+#avatar_update {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+}
+.myProfileAvatarEdit a {
+    align-self: center;
+    color: hsl(0, 70%, 43%);
+}
+.backButtonEditAvatar, .EditAccueilButtonAvatar, .updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+.blankMyEditAvatarPage {
+    height: 80px;
+}
+.myProfileDeconnexion {
+    text-align: center;
+    background-color: HSL(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+}
+.myProfileEditButton {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+.myProfileDeconnexionButton {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+.blankMyProfilePage {
+    height: 40px;
+}
+
+//UPDATE PASSWORD
+.backgroundUpdatePasswordForm {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.updatePasswordTitle {
+   /*  align-self: center; */
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.containerUpdatePasswordForm {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#update_password_submit {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 11px 10px;
+    width: 90%;
+    margin: 10px;
+    color: white;
+}
+
+.updatePasswordItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin: 10px 0px 10px 0px;
+}
+
+#update_password_oldPassword, #update_password_plainPassword_first, #update_password_plainPassword_second {
+    background-color: white;
+    border-radius : 10px;
+    border: solid 1px #40c952;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    appearance: none;
+}
+.backButtonUpdatePassword {
+    align-self: center;
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 90%;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+// PROFILE LIST MATCHES
+
+.containerMyMatchesBackground {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.CountCreationMatchMessage, .CountParticipationMatchMessage {
+    background-color: #40c952;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px hsl(128, 84%, 32%);
+    color: white;
+    width: 87%;
+    text-align: center;
+}
+.CountCreationMatchMessageAdd, .CountPariticipationMatchMessageAdd {
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: hsl(128, 84%, 32%);
+    color:  #40c952;
+}
+.myMatchesTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.containerMatchlisting {
+    text-decoration: none;
+    width: 90%;
+    cursor: pointer;
+}
+.myBlockListMatches {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.myProfileMatchButton, .myProfileParticipationsButton {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+}
+.myProfileMatchButton a, .myProfileParticipationsButton a {
+    color: white;
+    text-decoration: none;
+}
+.matchListing {
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #40c952;
+    border: solid 2px hsl(128, 84%, 32%);
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.matchListingOwn {
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #d3721d;
+    border: solid 2px #aa5c18;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.matchListingTitleMatch {
+    font-size: 1.8rem;
+    color: hsl(128, 84%, 32%);
+}
+.matchListingTitleMatchOwn {
+    font-size: 1.8rem;
+    color: #aa5c18;
+}
+.matchListingDateMatch {
+    margin-top: 10px;
+    color: white;
+}
+.matchListingMessageOwner {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#aa5c18;
+    color:#d3721d;
+}
+.backButtonParticipationMatchProfile, .backButtonShowMatchProfile  {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 85%;
+    color: white;
+    text-decoration: none;
+}
+.blankMyProfileShowMatchPage {
+    height: 200px;
+}
+.successMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
+@media (min-width: 0px) and (max-width: 600px) {
+    .myBlockListMatches {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .CountCreationMatchMessage, .CountParticipationMatchMessage {
+        width: 85%;
+    }
+    .blankMyProfileShowMatchPage {
+        height: 120px;
+    }
+}
+
+//EDIT USER
+#updateMessageSuccess {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+
+}
+.editionPage {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.containerEditionForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.containerEditionForm:nth-child(1) {
+    margin-top: 100px;
+}
+.editionTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.editionTitleFormAvatar {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+}
+.editionItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.editionItemForm label {
+    text-align: center;
+}
+.editionBirtdateForm label {
+    display: flex;
+    justify-content: center;
+}
+.editionLabelEmail, .editionLabelPassword {
+    align-self: center;
+    text-align: center;
+}
+#user_email, #user_pseudo, #user_sex, #user_level, #user_address,
+#user_postalcode, #user_city, #user_description, #user_phone, #user_firstname, #user_lastname {
+    text-align: center;
+    width: 95%;
+}
+#user_birthdate_month, #user_birthdate_day, #user_birthdate_year {
+    padding: 10px 37px;
+    color: white;
+    background-color: hsl(128, 56%, 52%);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    border: solid 2px #0d961f;
+}
+.editionBirtdateForm {
+    display: flex;
+    justify-content: center;
+}
+
+#user_email, #user_pseudo, #user_firstname, #user_lastname {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    border-radius: 10px;
+    padding: 10px 50px;
+    color: white;
+}
+#user_sex, #user_level {
+    padding: 10px 50px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
+}
+#user_address, #user_postalcode, #user_phone, #user_city, #user_description {
+    padding: 10px 50px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
+}
+.EditAccueilButton, .backButtonEditProfile, #user_update {
+    text-align: center;
+    margin-top: 10px;
+    align-self: center;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    width: 95%;
+    padding: 10px 50px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0d961f;
+}
+#user_update {
+    font-size: 0.9rem;
+}
+.DeleteButtonEditProfile {
+    margin-top: 60px;
+    align-self: center;
+    background-color: hsl(0, 70%, 43%);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 95%;
+    display: flex;
+    justify-content:center;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 50px;
+}
+.DeleteButtonEditProfile button.btn {
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    align-self: center;
+    text-align: center;
+    border: none;
+    color: white;
+    background-color: hsl(0, 70%, 43%);
+}
+.blankEditionPage {
+    height: 60px;
+}
+
+//ALL USERS PART
+.backgroundAllUsers {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.containerSearch  {
+    padding-top:100px;
+    align-items: center;
+}
+.containerSearch {
+    display: flex;
+    flex-direction: column;
+}
+.containerPlayers {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchTitleUsers {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
+}
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    color: black;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 50px 20px;
+    width: 320px;
+
+    background-color: white;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 18px 35px -29px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 18px 35px -29px rgba(0,0,0,0.75);
+    box-shadow: 0px 18px 35px -29px rgba(0,0,0,0.75);
+}
+.container_1_players {
+    padding-left: 10px;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.playerPseudo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: HSL(128, 56%, 52%);
+}
+
+.playerSex {
+    color: grey;
+}
+
+.playerPhoto {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.playerItem {
+    margin: 5px;
+}
+.backButtonShowAllUsers {
+    text-align: center;
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: solid 2px #0daa1a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 100%;
+    font-size:0.9rem
+}
+@media (max-width: 320px) {
+    .players {
+        width: 300px;
+    }
+}
+@media (min-width: 380px) {
+    .players {
+        width: 360px;
+    }
+}
+@media (min-width: 500px) {
+    .players {
+        width: 450px;
+    }
+}
+@media (min-width: 600px) {
+    .players {
+        width: 550px;
+    }
+}
+
+
+//USER SHOW PART
+.backgroundShowUser {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.containerUserProfileShow {
+    padding: 20px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    grid-template-areas: 
+        "picture pseudo pseudo"
+        "description description description"
+        "info info info"
+    ;
+}
+.userPictureProfileShow {
+    height : 100px ;
+    width : 100px ;
+    grid-area: picture;
+    border-radius: 50%;
+}
+.userPseudoShow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: pseudo;
+}
+.userPseudoShowItem {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.userSexShowItem {
+    font-weight: light;
+    font-size: 1rem;
+}
+
+.userDescriptionShow {
+    padding: 50px 0;
+    grid-area: description;
+    display: flex;
+}
+.userInformationShow {
+    grid-area: info;
+    display: flex;
+    justify-content: space-around;
+    border: solid HSL(218, 26%, 91%) 1px;
+    background-color: HSL(128, 56%, 52%);
+    padding: 20px;
+    border-radius: 5px;
+}
+.userInformationItem {
+    font-size: 0.9rem;
+    color: white;
+    align-self: center;
+    margin: 0.5rem;
+}
+.userContactShow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.userContactPhone, .userContactMail, .userContactAddress {
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.userPhoneShow, .userEmailShow, .userAddressShow, .userContactItem {
+    font-size: 0.9rem;
+}
+.userPhoneShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userEmailShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userAddressShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userContactItem {
+    font-weight: bold;
+}
+.userContactPhone, .userContactMail, .userContactAddress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//NAVBAR
+.containerNavbar {
+    padding: 10px 0px;
+    min-width: 100%;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    background-color: HSL(128, 56%, 52%);
+}
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    grid-auto-columns: minmax(10px, auto);
+    grid-gap: 0.5rem;
+    grid-template-areas: 
+        "search add localisation user";
+    padding: 0;
+}
+.logoNavBar {
+    width: 18px;
+    cursor: pointer;
+}
+.localisation {
+    grid-area: localisation;
+}
+.addAnnounce {
+    grid-area: add;
+}
+.search {
+    grid-area: search;
+}
+.userDirect {
+    display: grid ;
+    grid-area: user;
+}
+.navbar li {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+}
+.blankShowUserPage {
+    height: 80px;
+}
+
+//EDIT
+.widget {
+    display : grid ;
+    justify-content : center ;
+    font-size: 30px;
+    padding-top: 20px ;
+}
+.widget label {
+    padding-right: 20px ;
+}
+.containerEdit button {
+   margin-top: 50px ;
+   float : right ;
+}
+.containerEdit h2 {
+    text-align: center;
+}
+
+//SEARCH
+.backgroundSearchUsers {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.searchPlayersTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
+}
+.players .playerphoto {
+    height: 120px;
+    width: 120px;
+}
+.searchFormRow select {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: hsla(348, 2%, 93%, 0.92);
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.containerSearchUsers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 100px 1rem 3rem 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+}
+.searchFormRow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.searchFormRow div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.searchFormRow label {
+    text-align: center;
+}
+
+.searchFormRow #search_user_city, .searchFormRow #search_user_max, 
+.searchFormRow #search_user_min, .searchFormRow #search_user_sex, 
+.searchFormRow #search_user_level {
+    border: solid 1px hsl(128, 56%, 52%);
+    background-color: white;
+}
+#search_user_level, #search_user_sex { 
+    border: none;
+    appearance: none;
+    padding: 10px 85px;
+}
+#search_user_level {
+    border-radius: 10px;
+    text-align: center;
+}
+#search_user_min, #search_user_max {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
+    text-align: center;
+}
+#search_user_city {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#search_user_sex {
+    border-radius: 10px;
+    text-align: center;
+}
+.searchFormUserButton {
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: solid 2px rgb(13, 170, 26);
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.searchcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.resultSearch {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    width: 90%;
+    border-radius: 10px;
+}
+.containerResultSearchMessage {
+    display: flex;
+    justify-content: center;
+}
+.resultSearch, .resultSearchMessage {
+    align-self: center;
+    text-align: center;
+}
+.resultSearchMessage {
+    background-color: hsl(0, 70%, 43%);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+}
+.containerHourDateStartEnd {
+    display: flex;
+}
+
+//SEARCH MATCH PAGE 
+.backgroundSearchMatchs {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.searchMatchesTitle {
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.containerSearchMatchs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 100px 1rem 3rem 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+}
+.searchFormMatchRow #search_match_startHour, .searchFormMatchRow #search_match_endHour, 
+.searchFormMatchRow #search_match_adress, .searchFormMatchRow #search_match_level,
+.searchFormMatchRow #search_match_min, .searchFormMatchRow #search_match_max {
+    appearance: none;
+    border: solid 1px hsl(128, 56%, 52%);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#search_match_adress, #search_match_startHour, #search_match_endHour, 
+#search_match_min, #search_match_max, #search_match_level { 
+    color: rgb(0, 0, 0);
+}
+#search_match_save { 
+    color: rgb(255, 255, 255);
+}
+#search_match_save, #search_match_adress, #search_match_startHour, 
+#search_match_endHour, #search_match_min, #search_match_max, #search_match_level { 
+    background-color: hsl(128, 56%, 52%);/*  */
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    align-self: center;
+    border: solid 2px #0daa1a;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 10px 0px;
+}
+.ContainerSearchMatchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.containerMatchsResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    width: 700px;
+}
+.itemMatchOrganizerResult {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.itemMatchResult {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerSearchMatchOrganizerName {
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(125, 86%, 36%);
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.titleItemMatchOrganizerResult {
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+}
+.titleItemMatchResult {
+    color: hsl(128, 56%, 52%);
+    font-weight: bold;
+    margin: 5px;
+}
+.watch {
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0daa1a;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 100%;
+
+}
+.blankShowTennisMatchPage {
+    height: 60px;
+}
+@media (min-width: 440px) {
+    .containerMatchsResult {
+        width: 90%;
+    }
+}
+@media (max-width:440px) {
+    .containerMatchsResult {
+        width: 340px;
+    }
+}
+
+//MATCH CREATE
+.createMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
+}
+.backgroundMatchCreate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.containerCreationMatchForm {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerCreationMatchForm div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.createMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.createMatchItemForm li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    color: red;
+}
+.createMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+#tennis_match_name, #tennis_match_adress, #tennis_match_description,
+#tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+    border-radius : 10px;
+    border: solid 1px #40c952;
+    width: 220px;
+    padding: 10px;
+    text-align: center;
+    appearance: none;
+}
+.createMatchSaveItemForm button {  
+    border-radius : 10px ; 
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952 ; 
+    height : 40px ; 
+    margin-top: 30px ;
+    color: white;
+    width: 220px;
+}
+
+.createMatchSaveItemForm{
+    margin-bottom: 50px ;
+}
+
+.createMatchItemForm {
+   margin: 10px 0px;
+}
+
+.backgroundMatchCreate {
+    text-align : center ;
+}
+
+.createMatchDateItemForm{
+    margin-top: 10px ;
+}
+@media (min-width: 800px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+        width: 620px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 620px;
+    }
+}
+@media (min-width: 500px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+        width: 500px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 500px;
+    }
+}
+@media (min-width: 300px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+        width: 280px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
+
+// MATCH UPDATE -> This is related to CREATE with his #
+.backgroundMatchEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
+    background-repeat: no-repeat;
+    height: calc(100vh - 73.08px);
+    background-position: center;
+    background-size: cover;
+}
+.editMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.containerEditMatchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerEditMatchForm div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;}
+
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.editMatchSaveItemForm button {  
+    border-radius : 10px ; 
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952 ; 
+    height : 40px ; 
+    margin-top: 30px ;
+    color: white;
+    width: 220px;
+}
+.editMatchSaveItemForm{
+    margin-bottom: 50px ;
+}
+.editMatchItemForm {
+   margin: 10px 0px;
+}
+.backgroundMatchEdit {
+    text-align : center ;
+}
+.editMatchDateItemForm{
+    margin-top: 10px ;
+}
+.UpdateButtonEditMatch , .backButtonEditTennisMatch {
+    border-radius: 10px;
+    margin: 15px 0;
+    background-color: hsl(128, 56%, 52%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem; 
+    border: solid 2px rgb(13, 170, 26); 
+    width : 280px ;
+}
+
+.containerButtonEditMatch a{
+    text-decoration: none ;
+}
+.blankEditionMatchPage {
+    height: 30px;
+}
+@media (min-width: 800px) {
+    .editMatchSaveItemForm button {  
+        width: 620px;
+    }
+}
+@media (min-width: 500px) {
+    .editMatchSaveItemForm button {  
+        width: 500px;
+    }
+}
+@media (min-width: 300px) {
+    .editMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
+
+// MATCH DESCRIPTION PAGE
+
+.matchShowTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    position: fixed;
+}
+.TennisMatchShowMessage {
+    padding: 20px;
+    background-color: hsl(28, 76%, 47%);
+    border: solid 2px  hsl(28, 75%, 38%);
+    border-radius: 10px;
+    margin: 20px 0px 10px 0px;
+    color: white;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+}
+.containerInteractionParticipeMatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+}
+.itemInteractionParticipeMatchComplete, .itemInteractionParticipeMatch {
+    align-self: center;
+    padding: 20px;
+    text-align: center;
+    justify-content:center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 60px;
+    width: 100%;
+    color: white;
+    margin: 10px;
+}
+.itemInteractionParticipeMatchComplete {
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+}
+.itemInteractionParticipeMatch {
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952;
+}
+.backButtonToUserList {
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: solid 2px #0daa1a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+}
+.backButtonToUserList a {
+    text-decoration: none;
+    color: white;
+}
+.updateOrganizerButtonTennisMatchShow {
+    align-self: center;
+    padding: 20px;
+    background-color: HSL(128, 56%, 52%);
+    border: solid 2px #0daa1a;
+    text-align: center;
+    justify-content:center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 80px;
+    width: 100%;
+    color: white;
+    margin-bottom: 10px;
+}
+.deleteOrganizerButtonTennisMatchShow {
+    align-self: center;
+    padding: 20px;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    text-align: center;
+    justify-content:center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 80px;
+    width: 100%;
+}
+.deleteOrganizerButtonTennisMatchShow button.btn{
+    background-color: hsl(0, 70%, 43%);
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.backgroundDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.matchTitleTennisMatchShow {
+    margin: 20px;
+}
+.matchDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: hsla(348, 2%, 93%, 0.8);
+        border-radius: 10px;
+        margin-top: 100px;
+        padding: 20px;
+        width: 80%;
+        -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+}
+.titleItemTennisMatchShow {
+    display: flex;
+    flex-direction: column;
+    color: hsl(128, 56%, 52%);
+    font-weight: bold;
+    margin: 5px;
+}
+.containerDescriptionDateTennisMatchShow {
+    display: flex;
+    flex-direction: row;
+}
+.containerDateTennisMatchShow, .containerDescriptionDateTennisMatchShow,
+.containerAddressTennisMatchShow, .containerDescriptionTennisMatchShow, .containerLevelTennisMatchShow {
+    margin: 10px;
+}
+.containerDescriptionDateTennisMatchShow p {
+    margin: 10px;
+}
+.containerButtonTennisMatchShow {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.backButtonTennisMatchShow, .participateButtonTennisMatchShow, .backButtonTennisMatchBack {
+    text-align: center;
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: solid 2px #0daa1a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 10px;
+}
+.blankTennisMatchDetailPage {
+    height: 100px;
+}
+.successModifiedMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
+.successAddMatchMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
+
+//MAIL//
+.containerSendEmail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.containerMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 100px;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    width: 330px;
+}
+.emailTo [type="email"] , .emailFrom [type="email"] {
+    color : grey  ;
+    background-color : #b6b4b4; 
+}
+.SendAMessageTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.emailFrom, .emailTo, .emailSubject, .emailText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.emailFromTitle, .emailToTitle, .emailSubjectTitle, .emailTextTitle {
+    margin: 5px;
+}
+
+#mail_from, #mail_to, #mail_subject, #mail_html {
+    border: solid 1px #40c952;    
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 10px;
+    width: 310px;
+}
+#mail_html { 
+    height: 150px;
+}
+#mail_from, #mail_to {
+    border: solid 1px #626362;
+}
+.emailTo {
+    margin-bottom: 50px ;
+}
+.userEmailShow{
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: solid 2px #0daa1a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.userEmailShow a{
+    color: white;
+    text-decoration: none ;
+}
+.SendAMessageSubmitButton {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width:310px;
+    margin: 10px;
+}
+.SendAMessageSubmitButton input {
+    background-color: #40c952;
+    color: white;
+    border: none;
+}
+.containerBottomSendMessage {
+    display: flex;
+    flex-direction: column;
+}
+.backButtonSendMessage {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 11.7px 50px;
+    margin: 10px;
+    width: 310px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+.blankSendMessagePage {
+    height: 50px;
+}
+@media (min-width:450px) {
+    #mail_from, #mail_to, #mail_subject, #mail_html {
+        width: 400px;
+    }
+    .SendAMessageSubmitButton {
+        width:400px;
+    }
+    .backButtonSendMessage {
+        width: 400px;
+    }
+    .containerMessage{
+        width: 420px;
+    }
+}
+@media (min-width:600px) {
+    #mail_from, #mail_to, #mail_subject, #mail_html {
+        width: 500px;
+    }
+    .SendAMessageSubmitButton {
+        width:500px;
+    }
+    .backButtonSendMessage {
+        width: 500px;
+    }
+    .containerMessage{
+        width: 520px;
+    }
+}
+@media (min-width:700px) {
+    #mail_from, #mail_to, #mail_subject, #mail_html {
+        width: 600px;
+    }
+    .SendAMessageSubmitButton {
+        width: 600px;
+    }
+    .backButtonSendMessage {
+        width: 600px;
+    }
+    .containerMessage{
+        width: 620px;
+    }
+}

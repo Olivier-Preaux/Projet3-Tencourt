@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Profile • Tencourt{% endblock %}
+
+{% block body %}
+    <div class="editionPage">
+    <h1 class="editionTitleForm">Modifier mon profile</h1>
+        {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <div class="blankEditionPage"></div>
+    </div>
+{% endblock %}
+

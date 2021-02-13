@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{{parent()}}
+{% endblock %}
+
+{% block body %}
+	<h1 class="SendAMessageTitle">Envoyer un message</h1>
+	<div class="containerSendEmail">
+		<div class="containerMessageForm">
+			{{ form_start (form) }}
+			<div class="containerMessage">
+				<div class='emailFrom'>
+					<p class="emailFromTitle">De:</p>
+					<p>{{ form_widget(form.from, {'value':  app.user.email  }) }}</p>
+				</div>
+				<div class='emailTo'>
+					<p class="emailToTitle">À:</p>
+					<p>{{ form_widget(form.to, {'value':  user.email  }) }}</p>
+				</div>
+				<div class='emailSubject'>
+					<p class="emailSubjectTitle">Sujet:</p> 
+					<p>{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}</p>
+				</div>
+				<div class='emailText'>
+					<p class="emailTextTitle">Message: </p>
+					<p>{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}</p>
+				</div>
+				<div class="containerBottomSendMessage">
+					<a class="SendAMessageSubmitButton" href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyer"></a>
+					<a class="backButtonSendMessage" href="{{ path('user_show', {'slug': user.slug}) }}">Retour</a>
+				</div>
+				{{ form_end (form) }}
+			</div>
+			<div class="blankSendMessagePage"></div>
+		</div>
+    </div>
+	{% endblock %}

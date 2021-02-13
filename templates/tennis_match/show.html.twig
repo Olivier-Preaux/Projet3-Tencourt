@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ tennis_match.name }} - TenCourt{% endblock %}
+
+{% block body %}   
+<div class="backgroundDescriptionContainer">
+    
+<h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
+    {% for message in app.flashes('success') %}
+            <div id="updateMessageSuccess" >
+                <p class="successModifiedMessage">{{ message }}</p>
+            </div>
+            <script language='javascript'>
+                temp=document.getElementById('updateMessageSuccess');
+                setTimeout('temp.style.display="none"',3000);
+            </script>
+    {% endfor %}
+    <div class="matchDescriptionContainer"> 
+        <h2 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h2>
+        <div class="containerDateTennisMatchShow">
+            <p class="itemDateTennisMatchShow"><span class="titleItemTennisMatchShow">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
+        </div>
+        <div class="containerLevelTennisMatchShow">
+            <p class="itemLevelTennisMatchShow"><span class="titleItemTennisMatchShow">Niveau:</span> {{ tennis_match.level }}</p>
+        </div>
+        <div class="containerDescriptionDateTennisMatchShow">
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">De</span> {{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</p>
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">À</span> {{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</p>
+        </div>
+        <div class="containerAddressTennisMatchShow">
+            <p class="itemAddressTennisMatchShow"><span class="titleItemTennisMatchShow">Lieu:</span> {{ tennis_match.adress }}</p>
+        </div>
+        <div class="containerDescriptionTennisMatchShow">
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">Description</span> {{ tennis_match.description }}</p>
+        </div>
+    </div>
+    <div class="containerButtonTennisMatchShow">
+
+        <div class="containerInteractionParticipeMatch">
+        
+        {% if app.user != isParticipent and nbParticipents >= 2 %}
+            <div class="containerInteractionParticipeMatch">
+                <p class="itemInteractionParticipeMatchComplete">Ce match est complet</p>
+            </div>
+        {% endif %}
+
+        {% if app.user == isParticipent and nbParticipents >= 2 %}
+            <div class="containerInteractionParticipeMatch">
+                <p class="itemInteractionParticipeMatchComplete">Ce match est complet</p>
+            </div>
+        {% endif %}
+
+        {% if app.user == tennis_match.organizer %}
+            {% for participent in tennis_match.participent %}
+                {% if participent != tennis_match.organizer %}
+                    <a class="backButtonTennisMatchShow" href="{{ path('user_show', {'slug': participent.slug}) }}">Profil de l'adversaire</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if app.user != tennis_match.organizer and nbParticipents < 2 %}
+            <div class="containerInteractionParticipeMatch">
+                <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
+            </div>
+        {% endif %}
+
+        {% if app.user != tennis_match.organizer and app.user == isParticipent %}
+            <a class="itemInteractionParticipeMatch" href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
+        {% endif %}
+
+        {% if app.user == tennis_match.organizer %}
+                <p class="TennisMatchShowMessage">Vous êtes l'organisateur de ce match</p>
+                <a class="updateOrganizerButtonTennisMatchShow" href="{{path('tennis_match_edit', {'id': tennis_match.id})}}">Modifier le match</a>
+                <a class="deleteOrganizerButtonTennisMatchShow" href="{{path('tennis_match_delete', {'id': tennis_match.id, 'slug': tennis_match.organizer.slug})}}">{{ include('tennis_match/_delete_form.html.twig') }}</a>
+        {% endif %}
+
+        {% if app.user != tennis_match.organizer %}
+            <a class="backButtonTennisMatchShow" href="{{ path('user_show', {'slug': user.slug}) }}">Profil de l'Organisateur</a>
+        {% endif %}
+
+        <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Recherche de matches</a>
+        <div class="blankTennisMatchDetailPage"></div>
+    </div>
+</div>
+{% endblock %}

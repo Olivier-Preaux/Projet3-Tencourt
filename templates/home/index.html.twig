@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
+    <title>{% block title %}Accueil • TenCourt{% endblock %}</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+    <div class="homepageLogin">
+{#         <div class="containerLoginForm"> #}
+            <div class="containerLoginWelcomeMessage">
+                <p>Bonjour et bienvenue sur TEN'COURT</p>
+                <p>Trouver un adversaire en quelques cliques</p>
+            </div>
+            {% if app.user %}
+                <div class="containerAuthButtons">
+                    <button class="submitConnexion" type="submit"><a href="{{ path('user_index') }}">Entrer</a></button>
+                    <a class="loggedPageLogoutButton" href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
+            {% else %}
+                <div class="containerAuthButtons">
+                    <button class="submitConnexion" type="submit"><a href="{{ path('app_login') }}">S'identifier</a></button>
+                    <a class="subscriptionText" href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
+                </div>
+            {% endif %}
+{#         </div> #}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>
