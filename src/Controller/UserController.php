@@ -135,7 +135,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="edit", methods={"DELETE","GET","POST"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function edit(Request $request, User $user): Response
