@@ -118,7 +118,7 @@ class UserFixtures extends Fixture
         $admin->setDescription('Je suis l\'administrateur de cette application');
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
-            'adminpassword'
+            'test'
         ));
 
         $manager->persist($admin);
