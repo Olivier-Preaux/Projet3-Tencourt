@@ -14,11 +14,26 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class UserControllerTest extends WebTestCase
 {
+
+    public function testUserIndex()
+    {  
+        $client = static::createClient();  
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('admin@monsite.com');
+        $client->loginUser($testUser);
+        
+        $crawler = $client->request('GET', '/users');
+        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $crawler = $client->followRedirect();
+        $this->assertSelectorTextContains('h1', 'Recherche rapide de joueurs');
+    }
+
     public function testUserNew()
     {   
         $client = static::createClient(); 
         $crawler = $client->request('GET', '/register');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertSelectorTextContains('h1', 'Inscription');
 
         $email= 'test@test.com';
         $form = $crawler->selectButton('registration_form[save]')->form();
@@ -46,9 +61,23 @@ class UserControllerTest extends WebTestCase
         $this->assertEquals($user->getEmail(), $email);
     }
 
+    // public function testDeniedAccessUserDelete()
+    // {
+    //     $client = static::createClient();
+    //     $userRepository = static::$container->get(UserRepository::class);
+    //     $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+    //     $client->loginUser($testUser);
+    //     $crawler = $client->request('GET', '/users/pseudotest/edit');
+    //     $this->assertEquals(200, $client->getResponse()->getStatusCode()); 
+        
+    //     $form = $crawler->selectButton('Supprimer mon compte')->form();
+
+    //     $crawler= $client->submit($form);
+    //     $this->assertEquals(302, $client->getResponse()->getStatusCode());
+    // }
     
 
-    public function testMatchDelete()
+    public function testUserDelete()
     {
         $client = static::createClient();  
         $userRepository = static::$container->get(UserRepository::class);
@@ -71,5 +100,7 @@ class UserControllerTest extends WebTestCase
        
         $this->assertNull($deletedUser);
     }
+
+   
 
 }
