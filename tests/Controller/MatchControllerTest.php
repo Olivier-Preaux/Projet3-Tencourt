@@ -106,6 +106,37 @@ class MatchControllerTest extends WebTestCase
 
     }
 
+    public function testDeniedMatchEdit()
+    {
+        $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $client->loginUser($testUser);
+
+        $em = self::$container->get('doctrine');
+        $match = $em->getRepository(TennisMatch::class)->findOneBy([], ['id' => 'DESC']);
+        $matchId = $match->getId() ;
+
+        $crawler = $client->request('DELETE', 'tennis/match/admin/ '.$matchId.'');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());         
+    }
+
+    public function testDeniedMatchDelete()
+    {
+        $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $client->loginUser($testUser);
+
+        $em = self::$container->get('doctrine');
+        $match = $em->getRepository(TennisMatch::class)->findOneBy([], ['id' => 'DESC']);
+        $matchId = $match->getId() ;
+
+        $crawler = $client->request('GET', '/tennis/match/matches/'.$matchId.'/edit');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode());         
+    }
+
+
     public function testMatchDelete()
     {
         $client = static::createClient();  

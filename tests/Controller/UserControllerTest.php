@@ -61,21 +61,39 @@ class UserControllerTest extends WebTestCase
         $this->assertEquals($user->getEmail(), $email);
     }
 
-    // public function testDeniedAccessUserDelete()
-    // {
-    //     $client = static::createClient();
-    //     $userRepository = static::$container->get(UserRepository::class);
-    //     $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
-    //     $client->loginUser($testUser);
-    //     $crawler = $client->request('GET', '/users/pseudotest/edit');
-    //     $this->assertEquals(200, $client->getResponse()->getStatusCode()); 
-        
-    //     $form = $crawler->selectButton('Supprimer mon compte')->form();
+    public function testDeniedAccessUser()
+    {
+        $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $client->loginUser($testUser);
 
-    //     $crawler= $client->submit($form);
-    //     $this->assertEquals(302, $client->getResponse()->getStatusCode());
-    // }
+        $crawler = $client->request('GET', '/users/pseudotest/edit');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode()); 
+
+        $crawler = $client->request('DELETE', '/users/pseudotest');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode()); 
+        
+        $crawler = $client->request('DELETE', '/users/pseudotest/deleteAvatar');
+        $this->assertEquals(405, $client->getResponse()->getStatusCode()); 
+
+        $crawler = $client->request('DELETE', '/users/pseudotest/editAvatar');
+        $this->assertEquals(405, $client->getResponse()->getStatusCode()); 
+
+        $crawler = $client->request('DELETE', '/users/update_password/pseudotest');
+        $this->assertEquals(403, $client->getResponse()->getStatusCode()); 
+    }
     
+    public function testAccessUserWithAdmin()
+    {
+        $client = static::createClient();
+        $userRepository = static::$container->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail('admin@monsite.com');
+        $client->loginUser($testUser);     
+
+        $crawler = $client->request('GET', '/users/pseudotest/edit');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());          
+    }
 
     public function testUserDelete()
     {
@@ -93,14 +111,11 @@ class UserControllerTest extends WebTestCase
         $form = $crawler->selectButton('Supprimer mon compte')->form();
 
         $crawler= $client->submit($form);
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());        
         
         $em = self::$container->get('doctrine');
-        $deletedUser = $em->getRepository(User::class)->find($testUserId);
-       
+        $deletedUser = $em->getRepository(User::class)->find($testUserId);       
         $this->assertNull($deletedUser);
-    }
-
-   
+    }  
 
 }

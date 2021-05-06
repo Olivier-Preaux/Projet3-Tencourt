@@ -105,7 +105,7 @@ class UserController extends AbstractController
         return $this->render('tennis_match/show.html.twig', [
             'tennis_match' => $tennisMatch,
             'user' => $user,
-            ]);
+        ]);
     }
 
     /**
@@ -140,6 +140,10 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
+        if ($user != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -166,6 +170,10 @@ class UserController extends AbstractController
      */
     public function editAvatar(Request $request, User $user, FileUploader $fileUploader): Response
     {
+        if ($user != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
+
         $form = $this->createForm(AvatarType::class, $user);
         $form->handleRequest($request);
 
@@ -197,6 +205,10 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
+        if ($user != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
+
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
@@ -221,6 +233,10 @@ class UserController extends AbstractController
      */
     public function deleteAvatar(EntityManagerInterface $entityManager, User $user): Response
     {
+        if ($user != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
+
         $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
         if (file_exists($fileToDelete)) {
             unlink($fileToDelete);
@@ -237,34 +253,36 @@ class UserController extends AbstractController
      */
     public function sendMail(Request $request, MailerInterface $mailer, User $user): Response
     {
-            $form = $this->createForm(MailType::class);
-            $form->handleRequest($request);
+
+        $form = $this->createForm(MailType::class);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-                $contact = [
-                    $form->get('from')->getData(),
-                    $form->get('to')->getData(),
-                    $form->get('subject')->getData(),
-                    $form->get('html')->getData()];
+            $contact = [
+                $form->get('from')->getData(),
+                $form->get('to')->getData(),
+                $form->get('subject')->getData(),
+                $form->get('html')->getData()
+            ];
 
-                $email = (new Email())
-                    ->from($contact[0])
-                    ->to($contact[1])
-                    ->subject($contact[2])
-                    ->html($contact[3]);
+            $email = (new Email())
+                ->from($contact[0])
+                ->to($contact[1])
+                ->subject($contact[2])
+                ->html($contact[3]);
 
-                $mailer->send($email);
+            $mailer->send($email);
 
-                $this->addFlash('success', 'Votre e-mail a bien été envoyé');
+            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
 
-                return $this->render('user/show.html.twig', [
+            return $this->render('user/show.html.twig', [
                 'user' => $user
-                ]);
+            ]);
         }
         return $this->render(
             'emails/index.html.twig',
             [
-            'form' => $form->createView(),
-            'user' => $user
+                'form' => $form->createView(),
+                'user' => $user
             ]
         );
     }
@@ -279,6 +297,10 @@ class UserController extends AbstractController
         UserPasswordEncoderInterface $passwordEncoder,
         User $user
     ): Response {
+
+        if ($user != $this->getUser()) {
+            throw $this->createAccessDeniedException('No access!');
+        }
 
         $form = $this->createForm(UpdatePasswordType::class, $user);
         $form->handleRequest($request);
@@ -302,7 +324,6 @@ class UserController extends AbstractController
         return $this->render('user/update_password.html.twig', [
             'form' => $form->createView(),
             'user' => $user,
-        ])
-        ;
+        ]);
     }
 }
