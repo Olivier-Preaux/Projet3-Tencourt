@@ -25,12 +25,22 @@ body {
     flex-direction: column;
     justify-content: flex-end;
 
-    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-image: url("../../assets/images/backgroundImages/Login2.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
-    background-size: cover;
+    // background-size: cover;
 }
+
+.logo-login {
+    margin-right : auto ;
+    margin-left : auto ;
+    height: 300px;
+    width : 400px ;
+    
+    margin-bottom : 60px ;
+  }
+
 .subscriptionPage {
     display: flex;
     flex-direction: column;
