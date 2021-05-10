@@ -90,6 +90,10 @@ class TennisMatchController extends AbstractController
      */
     public function edit(Request $request, TennisMatch $tennisMatch): Response
     {
+        if ($tennisMatch->getOrganizer() != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
+
         $form = $this->createForm(TennisMatchType::class, $tennisMatch);
         $form->handleRequest($request);
 
@@ -117,6 +121,9 @@ class TennisMatchController extends AbstractController
      */
     public function delete(Request $request, TennisMatch $tennisMatch, string $slug): Response
     {
+        if ($tennisMatch->getOrganizer() != $this->getUser() && !$this->isGranted('ROLE_ADMIN')) {
+            throw $this->createAccessDeniedException('No access!');
+        }
         if ($this->isCsrfTokenValid('delete' . $tennisMatch->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tennisMatch);
