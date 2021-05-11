@@ -32,13 +32,23 @@ body {
     // background-size: cover;
 }
 
+input {
+    margin-right: 10% ;
+    margin-left: 10% ;
+}
+
+button {
+    margin-right: 10% ;
+    margin-left: 10% ;
+}
+
 .logo-login {
-    margin : auto ;
-    height: 250px;
-    width : 300px ;
-    
-    
-  }
+    margin-left : auto  ;
+    margin-right : auto ;
+    height: 250px;  
+    padding-bottom : 40px ;
+    padding-top : 10px ;   
+}
 
 .subscriptionPage {
     display: flex;
@@ -65,13 +75,14 @@ body {
 .containerLoginWelcomeMessage {
     margin-bottom: 20px;
 }
-.containerLoginWelcomeMessage p {
+.containerLoginWelcomeMessage {
     text-align: center;
 }
 .containerLoginForm {
     display: flex;
     flex-direction: column;
-    margin: 0px 40px;
+    justify-content: center ;
+    
     margin-bottom: 120px;
 }
 .loginConnected {
@@ -94,7 +105,7 @@ body {
 }
 .LoginSubmitButton {
     border-radius: 10px;
-    margin: 15px 0;
+    margin-top : 20px ;
     background-color: hsl(128, 56%, 52%);
     border: none;
     color: white;
@@ -117,11 +128,12 @@ body {
     background-color: hsl(128, 56%, 52%);
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
     font-size: 1rem;
-    padding: 10px 100px;
+    padding: 10px ;
     border: none;
+    text-align: center ;
     border-radius: 10px;
-    margin: 10px;
-
+    margin-top: 10px;
+    margin-bottom : 10px;
     border: none;
     color: white;
     cursor: pointer;
