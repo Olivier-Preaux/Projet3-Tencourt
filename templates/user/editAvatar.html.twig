@@ -1,20 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modification Avatar • TenCourt{% endblock %}
+{% block title %}Modification Avatar • TenCourt
+{% endblock %}
 
 {% block body %}
-<div class="containerEditAvatarBackground">
-    <h1 class="editionTitleFormAvatar">Modifier mon avatar</h1>
-    <div class="myProfileAvatarEdit">
-    {% if user.avatar %}
-		<img class="myProfilePicture  userPictureProfileShow" src="{{'/uploads/' ~ user.avatar }}"/>
-        <a href="{{ path('user_delete_avatar', {'slug': user.slug}) }}">Supprimer</a>
-    {% else %}
-        <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-    {% endif %}
-	</div>
-    {{ include('user/_avatarForm.html.twig', {'button_label': 'Mettre à jour'}) }}
+	<div class="containerEditAvatarBackground">
+		<h1 class="editionTitleFormAvatar">Modifier mon avatar</h1>
+		<div class="myProfileAvatarEdit">
+			{% if user.avatar == null %}
+				<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+			{% endif %}
+			{% if user.id <= 31 %}
+				<img class="playerPhoto" src="{{ user.avatar }}"/>
+			{% else %}
+				<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+			{% endif %}
+		</div>
+		{{ include('user/_avatarForm.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    {# <div class="blankMyEditAvatarPage"></div> #}
-</div>
+		{# <div class="blankMyEditAvatarPage"></div> #}
+	</div>
 {% endblock %}
