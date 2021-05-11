@@ -33,12 +33,11 @@ body {
 }
 
 .logo-login {
-    margin-right : auto ;
-    margin-left : auto ;
+    margin : auto ;
     height: 250px;
     width : 300px ;
     
-    margin-bottom : 60px ;
+    
   }
 
 .subscriptionPage {
@@ -55,9 +54,9 @@ body {
 .homepageLogin {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-image: url("../../assets/images/backgroundImages/Login2.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
