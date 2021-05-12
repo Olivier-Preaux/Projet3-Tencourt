@@ -449,6 +449,9 @@ body {
     font-size: 1rem;
     color: white;
 }
+.myProfileDeconnexion{
+    margin-bottom : 50px ;
+}
 .myProfileDeconnexionButton {
     text-decoration: none;
     font-size: 1rem;
@@ -1168,6 +1171,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.backgroundSearchUsers form {
+
+margin-top: 100px;
+}
+
 .searchPlayersTitle {
     color: white;
     padding: 20px;
@@ -1485,11 +1494,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
     background-size: cover;
+}
+
+.backgroundMatchCreate .containerMain {
+    margin-top : 180px ;
 }
 .containerCreationMatchForm {
     padding-top: 80px;

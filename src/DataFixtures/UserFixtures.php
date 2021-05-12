@@ -65,6 +65,7 @@ class UserFixtures extends Fixture
         $admin->setAvatar($picture);
 
         $manager->persist($admin);
+        
         $this->addReference('admin', $admin);
 
 
