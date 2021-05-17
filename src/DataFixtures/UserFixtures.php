@@ -3,10 +3,11 @@
 namespace App\DataFixtures;
 
 use DateTime;
-use App\Entity\User;
 use App\Service\Slugify;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\User;
+use  Faker;
 use Faker\Factory;
 use Faker\Generator;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -27,10 +28,8 @@ class UserFixtures extends Fixture
 
     private $passwordEncoder;
 
-    /**
-     * @var Generator
-     */
-    public $faker ;
+    /** @var Generator */
+    private $faker;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -38,15 +37,9 @@ class UserFixtures extends Fixture
     }
 
     public function load(ObjectManager $manager)
-    {   
-        
-        
-
-        $faker = Factory::create('fr_FR');
+    {   $this->faker = Factory::create('fr_FR');
         $slugify = new Slugify();
         $genres = ['male', 'female'];
-       
-
 
         $userReferenceNumber = 0;
 
@@ -67,9 +60,9 @@ class UserFixtures extends Fixture
             'test'
         ));
 
-        $genre = $faker->randomElement($genres);
+        $genre = $this->faker->randomElement($genres);
         $picture = "https://randomuser.me/api/portraits/";
-        $pictureId = $faker->numberBetween(1, 99) . '.jpg';
+        $pictureId = $this->faker->numberBetween(1, 99) . '.jpg';
         $picture = $picture.($genre == 'male' ? 'men/' : 'women/') . $pictureId;
         $admin->setAvatar($picture);
 
@@ -84,34 +77,34 @@ class UserFixtures extends Fixture
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $contributor = new User();
            
-            $genre = $faker->randomElement($genres);
+            $genre = $this->faker->randomElement($genres);
             $picture = "https://randomuser.me/api/portraits/";
-            $pictureId = $faker->numberBetween(1, 99) . '.jpg';
+            $pictureId = $this->faker->numberBetween(1, 99) . '.jpg';
             $picture .= ($genre == 'male' ? 'men/' : 'women/') . $pictureId;
             $contributor->setAvatar($picture);
 
             $contributor->setSex($genre == 'male' ? 'Homme' : 'Femme');
-            $contributor->setPseudo($genre =='male' ? $faker->firstNameMale : $faker->firstNameFemale);
-            $contributor->setEmail($faker->email);
+            $contributor->setPseudo($genre =='male' ? $this->faker->firstNameMale : $this->faker->firstNameFemale);
+            $contributor->setEmail($this->faker->email);
             $contributor->setRoles(['ROLE_CONTRIBUTOR']);
             
            
-            $contributor->setLevel($faker->randomElement(array(
+            $contributor->setLevel($this->faker->randomElement(array(
                 'Débutant', 'Intermediaire', 'Expert', 'Professionnel'
             )));
-            $contributor->setPhone($faker->phoneNumber);
-            $contributor->setBirthdate(new DateTime($faker->date(
+            $contributor->setPhone($this->faker->phoneNumber);
+            $contributor->setBirthdate(new DateTime($this->faker->date(
                 'Y-m-d', //format
                 '2005-12-12' //date max - You can replace the date by 'now' to get the actual date
             )));
             $randKey = array_rand($this->cities, 1);
             $contributor->setCity($this->cities[$randKey]);
-            $contributor->setPostalcode($faker->postcode);
-            $contributor->setAddress($faker->streetAddress);
+            $contributor->setPostalcode($this->faker->postcode);
+            $contributor->setAddress($this->faker->streetAddress);
             $slug = $slugify->generate($contributor->getPseudo() ?? '');
            
             $contributor->setSlug($slug);
-            $contributor->setDescription($faker->sentence(20));
+            $contributor->setDescription($this->faker->sentence(20));
             $contributor->setPassword($this->passwordEncoder->encodePassword(
                 $contributor,
                 'password'
