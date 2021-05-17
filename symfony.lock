@@ -1,28 +1,4 @@
 {
-    "amphp/amp": {
-        "version": "v2.5.1"
-    },
-    "amphp/byte-stream": {
-        "version": "v1.8.0"
-    },
-    "amphp/parallel": {
-        "version": "v1.4.0"
-    },
-    "amphp/parallel-functions": {
-        "version": "v0.1.3"
-    },
-    "amphp/parser": {
-        "version": "v1.0.0"
-    },
-    "amphp/process": {
-        "version": "v1.1.0"
-    },
-    "amphp/serialization": {
-        "version": "v1.0.0"
-    },
-    "amphp/sync": {
-        "version": "v1.4.0"
-    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99"
     },
@@ -126,9 +102,6 @@
     "fzaninotto/faker": {
         "version": "v1.9.2"
     },
-    "gitonomy/gitlib": {
-        "version": "v1.2.2"
-    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
@@ -147,12 +120,6 @@
     "ocramius/proxy-manager": {
         "version": "2.8.0"
     },
-    "ondram/ci-detector": {
-        "version": "3.5.1"
-    },
-    "opis/closure": {
-        "version": "3.6.0"
-    },
     "pdepend/pdepend": {
         "version": "2.8.0"
     },
@@ -170,9 +137,6 @@
     },
     "phpmd/phpmd": {
         "version": "2.9.1"
-    },
-    "phpro/grumphp": {
-        "version": "v1.1.0"
     },
     "phpstan/phpdoc-parser": {
         "version": "0.4.9"
@@ -201,9 +165,6 @@
     "psr/log": {
         "version": "1.1.3"
     },
-    "seld/jsonlint": {
-        "version": "1.8.2"
-    },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
         "recipe": {
@@ -214,18 +175,6 @@
         },
         "files": [
             "config/packages/sensio_framework_extra.yaml"
-        ]
-    },
-    "squizlabs/php_codesniffer": {
-        "version": "3.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "3.0",
-            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
-        },
-        "files": [
-            "phpcs.xml.dist"
         ]
     },
     "symfony/asset": {
