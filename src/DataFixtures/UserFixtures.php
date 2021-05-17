@@ -7,8 +7,8 @@ use App\Entity\User;
 use App\Service\Slugify;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Faker;
 use Faker\Factory;
+use Faker\Generator;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
@@ -27,14 +27,22 @@ class UserFixtures extends Fixture
 
     private $passwordEncoder;
 
+    /**
+     * @var Generator
+     */
+    public $faker ;
+
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
 
     public function load(ObjectManager $manager)
-    {
-        $faker = Faker\Factory::create('fr_FR');
+    {   
+        
+        
+
+        $faker = Factory::create('fr_FR');
         $slugify = new Slugify();
         $genres = ['male', 'female'];
        
