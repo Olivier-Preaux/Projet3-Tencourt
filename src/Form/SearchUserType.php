@@ -18,7 +18,10 @@ class SearchUserType extends AbstractType
         $builder
             ->add('level', ChoiceType::class, [
                 'label' => 'Niveau',
-                'required' => false,
+                // 'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-4',
+                ],
                 'choices' => [
                     'Débutant' => 'Débutant',
                     'Intermediaire' => 'Intermediaire',
@@ -28,7 +31,10 @@ class SearchUserType extends AbstractType
             ])
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
-                'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-4',
+                ],
+                // 'required' => false,
                 'choices' => [
                     'Homme' => 'Homme',
                     'Femme' => 'Femme',
@@ -38,6 +44,9 @@ class SearchUserType extends AbstractType
             ->add('min', IntegerType::class, [
                 'label' => 'Age minimum',
                 'required' => false,
+                'attr' => [
+                    'class' => 'form-control mb-4',
+                ],
                 'attr' => [
                     'min' => 18,
                     'max' => 100,
@@ -52,7 +61,14 @@ class SearchUserType extends AbstractType
                 ]
             ])
             ->add('city', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mb-4',
+                ],
                 'label' => 'Adresse / Ville',
+                'label_attr' => ['attr'=>'bg-success'],
+                'row_attr' => ['attr'=>'bg-success'],
+               
+                
                 'required' => false,
             ])
         ;
