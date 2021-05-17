@@ -20,7 +20,7 @@ final class Version20210118132228 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, 
+        $this->addSql('CREATE TABLE "user" (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, 
         password VARCHAR(255) NOT NULL, pseudo VARCHAR(50) NOT NULL, sex VARCHAR(20) NOT NULL, level VARCHAR(255) NOT NULL, 
         address VARCHAR(255) DEFAULT NULL, postalcode VARCHAR(50) DEFAULT NULL, city VARCHAR(100) NOT NULL, description VARCHAR(255) 
         DEFAULT NULL, phone VARCHAR(50) DEFAULT NULL, birthdate DATE NOT NULL, avatar VARCHAR(255) DEFAULT NULL, slug VARCHAR(255) NOT NULL, 
@@ -31,6 +31,6 @@ final class Version20210118132228 extends AbstractMigration
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE user');
+        $this->addSql('DROP TABLE "user"');
     }
 }
