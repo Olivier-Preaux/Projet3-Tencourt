@@ -53,9 +53,12 @@ class SearchMatchType extends AbstractType
                 'widget' => 'single_text',
                 'required' => false,
             ])
-            ->add('save', SubmitType::class, [
-                'label' => 'Rechercher',
-            ]);
+            // ->add('save', SubmitType::class, [
+            //     'label' => 'Rechercher',
+            //     'attr' => [
+            //         'class' => 'btn form-control mb-4',
+            //     ],
+            // ]);
         ;
     }
 

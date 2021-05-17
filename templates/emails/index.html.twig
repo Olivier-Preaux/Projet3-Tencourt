@@ -11,19 +11,19 @@
 			<div class="containerMessage">
 				<div class='emailFrom'>
 					<p class="emailFromTitle">De:</p>
-					<p>{{ form_widget(form.from, {'value':  app.user.email  }) }}</p>
+					{{ form_widget(form.from, {'value':  app.user.email  }) }}
 				</div>
 				<div class='emailTo'>
 					<p class="emailToTitle">À:</p>
-					<p>{{ form_widget(form.to, {'value':  user.email  }) }}</p>
+					{{ form_widget(form.to, {'value':  user.email  }) }}
 				</div>
 				<div class='emailSubject'>
 					<p class="emailSubjectTitle">Sujet:</p> 
-					<p>{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}</p>
+					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}
 				</div>
 				<div class='emailText'>
 					<p class="emailTextTitle">Message: </p>
-					<p>{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}</p>
+					{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}
 				</div>
 				<div class="containerBottomSendMessage">
 					<a class="SendAMessageSubmitButton" href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyer"></a>

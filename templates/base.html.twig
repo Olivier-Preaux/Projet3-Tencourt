@@ -19,10 +19,10 @@
 {% block navbar %}
     <nav class="containerNavbar">
         <ul class="navbar">
-            <a href="{{ path('tennis_match_new', {'slug': app.user.slug}) }}"><li class="addAnnounce"><img class="logoNavBar" src="{{ app.request.pathinfo == path('tennis_match_new',{'slug': app.user.slug}) ? asset('build/images/navbar/active/addactive.png') : asset('build/images/navbar/add.png') }}"></li></a>
-            <a href="{{ path('search_users') }}"><li class="search"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_users') ? asset('build/images/navbar/active/searchactive.png') : asset('build/images/navbar/search.png') }}"></li></a>
-            <a href="{{ path('search_matches') }}"><li class="location"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_matches') ? asset('build/images/navbar/active/locationactive.png') : asset('build/images/navbar/location.png') }}"></li></a>
-            <a href="{{ path('user_profile', {'slug': app.user.slug}) }}"><li class="userDirection"><img class="logoNavBar" src="{{ app.request.pathinfo == path('user_profile', {'slug': app.user.slug}) ? asset('build/images/navbar/active/profileactive.png') : asset('build/images/navbar/profile.png') }}"></li></a>
+            <a href="{{ path('tennis_match_new', {'slug': app.user.slug}) }}" class="navButton"><li class="addAnnounce"><img class="logoNavBar" src="{{ app.request.pathinfo == path('tennis_match_new',{'slug': app.user.slug}) ? asset('build/images/navbar/active/addactive.png') : asset('build/images/navbar/add.png') }}"></li></a>
+            <a href="{{ path('search_users') }}" class="navButton"><li class="search"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_users') ? asset('build/images/navbar/active/searchactive.png') : asset('build/images/navbar/search.png') }}"></li></a>
+            <a href="{{ path('search_matches') }}" class="navButton"><li class="location"><img class="logoNavBar" src="{{ app.request.pathinfo == path('search_matches') ? asset('build/images/navbar/active/locationactive.png') : asset('build/images/navbar/location.png') }}"></li></a>
+            <a href="{{ path('user_profile', {'slug': app.user.slug}) }}"class="navButton" ><li class="userDirection"><img class="logoNavBar" src="{{ app.request.pathinfo == path('user_profile', {'slug': app.user.slug}) ? asset('build/images/navbar/active/profileactive.png') : asset('build/images/navbar/profile.png') }}"></li></a>
         </ul>
     </nav>
 {% endblock %}
