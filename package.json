@@ -20,9 +20,12 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "postinstall": "encore production --progress"
     },
-    "dependencies": {
-        "bootstrap": "^5.0.1"
+    "dependencies": {       
+    },
+    "engines":{
+        "node":"14.16.0",
+        "yarn":"1.22.10"
     }
 }

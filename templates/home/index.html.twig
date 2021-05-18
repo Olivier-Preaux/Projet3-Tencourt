@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="icon" type="image/png" href="{{'build/images/favicon.png'}}"/>
+		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
 		<title>
 			{% block title %}Accueil • TenCourt
 			{% endblock %}
@@ -19,7 +19,7 @@
 				class="homepageLogin">
 				{#         <div class="containerLoginForm"> #}
 				<div class="containerLoginWelcomeMessage">
-					<img class="logo-login" src="{{'build/images/logo-tencourt.png'}}"/>
+					<img class="logo-login" src="{{asset('build/images/logo-tencourt.png')}}"/>
 					<div class="containerMain">
 						<p>Bonjour et bienvenue sur TEN'COURT</p>
 						<p>Trouver un adversaire en quelques cliques</p>
