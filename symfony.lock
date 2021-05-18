@@ -129,6 +129,9 @@
     "gitonomy/gitlib": {
         "version": "v1.2.3"
     },
+    "heroku/heroku-buildpack-php": {
+        "version": "v192"
+    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
