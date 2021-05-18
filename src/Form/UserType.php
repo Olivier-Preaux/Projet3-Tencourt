@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
@@ -29,6 +30,9 @@ class UserType extends AbstractType
             ])
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
+                'attr' => [
+                    'class' => 'form-control pt-4 pb-3',
+                ],
                 'choices' => [
                     'Homme' => 'Homme',
                     'Femme' => 'Femme',
@@ -37,6 +41,9 @@ class UserType extends AbstractType
             ])
             ->add('level', ChoiceType::class, [
                 'label' => 'Niveau',
+                'attr' => [
+                    'class' => 'form-control pt-4 pb-3',
+                ],
                 'choices' => [
                     'Débutant' => 'Débutant',
                     'Intermediaire' => 'Intermediaire',
@@ -63,12 +70,11 @@ class UserType extends AbstractType
                 'required' => false,
                 'label' => 'Telephone',
             ])
-            ->add('birthdate', BirthdayType::class, [
+            ->add('birthdate', DateType::class, [
                 'label' => false ,
+                'widget' => 'single_text',
+                'html5' => false ,
                 'format' => 'dd-MM-yyyy',
-                'placeholder' => [
-                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
-                ],
                 'years' => range(2003, 1930),
             ])
             ->add('firstname', TextType::class, [

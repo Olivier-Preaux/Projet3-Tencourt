@@ -1,6 +1,6 @@
 <div class="editionForm">
     {{ form_start(editUserForm) }}
-    <div class="containerEditionForm">
+    <div class="containerMainTop form-group text-center ">
         <div class="editionItemForm editionItemEmail">
             {{ form_row(editUserForm.email) }}
         </div>
@@ -31,7 +31,7 @@
         <div class="editionItemForm">
             {{ form_row(editUserForm.phone) }}
         </div>
-        <div class="editionBirtdateForm">
+       <div class='editionItemForm d-flex flex-column '  >
            Date de naissance
             {{ form_row(editUserForm.birthdate) }}
         </div>
@@ -48,4 +48,6 @@
             {# <a class="DeleteButtonEditProfile" href="{{ path('user_delete', {'id': user.id}) }}">Supprimer</a> #}
     </div>
 </div>
+
+
 

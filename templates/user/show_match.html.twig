@@ -13,18 +13,18 @@
                     setTimeout('temp.style.display="none"',3000);
                 </script>
         {% endfor %}
-        <h1 class="myMatchesTitle">Mes matches</h1>
-        <div class='myBlockListMatches'>
+        <h1 class="topTitle my-0">Mes matches</h1>
+        <div class='containerMainTopMatch form-group d-flex flex-column align-items-center'>
         <p class="CountCreationMatchMessage">Nombre de match(es) créé(s): <span class="CountCreationMatchMessageAdd">{{ matches|length }}</span></p>
             {% for match in matches|sort|reverse %}
                 <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : match.id }) }}">
                     <div class="matchListingOwn">
-                        <p class="matchListingTitleMatchOwn">{{ match.name }}</p>
-                        <p class="matchListingDateMatch">Le {{match.eventDate|date("d/m/Y")}}  à {{match.startHour|date("H")}}H{{match.startHour|date("i")}}</p>
+                        <p class="matchName">{{ match.name }}</p>
+                        <p class="matchDate">Le {{match.eventDate|date("d/m/Y")}}  à {{match.startHour|date("H")}}H{{match.startHour|date("i")}}</p>
                     </div>
                 </a>
             {% endfor %}
-            <a class="backButtonShowMatchProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+            <a class="btn btn-primary mt-4 mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
         <div>
     </div>
     <div class="blankMyProfileShowMatchPage"></div>

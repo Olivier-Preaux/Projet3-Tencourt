@@ -10,6 +10,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none ;
 }
 
 body {
@@ -19,6 +20,11 @@ body {
     color: black;
     font-family: "Excellence", impact, helvetica, arial, sans-serif;
     line-height: 1rem;
+}
+
+a{
+    text-decoration: none ;
+    color : white ;
 }
 
 // FORM
@@ -867,6 +873,18 @@ textarea.md-textarea:focus:not([readonly]) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color : white ;
+    font-size : 1.5rem 
+}
+
+.matchListingOwn .matchName{    
+    background : rgb(160, 159, 159) ;
+    padding : 1rem ;
+    margin-left: auto ;
+    margin-right: auto ;
+    width : 80% ;
+    color :rgb(0, 0, 0);
+    border-radius : 5px ;
 }
 
 .matchListingTitleMatch {
@@ -1485,6 +1503,7 @@ textarea.md-textarea:focus:not([readonly]) {
     justify-content: center;
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 10px;
+    
     border: hsla(348, 2%, 93%, 0.92);
     margin: 1rem 1rem 1rem 1rem;
     padding: 1rem;
@@ -1492,6 +1511,13 @@ textarea.md-textarea:focus:not([readonly]) {
     -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
 }
+
+@media only screen and (min-width: 600px){
+	.containerMain {
+        width:50%;
+        margin-left: auto;
+        margin-right: auto ;
+} }
 
 .containerMainTop {
     display: flex;
@@ -1506,6 +1532,49 @@ textarea.md-textarea:focus:not([readonly]) {
     -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
 }
+
+@media only screen and (min-width: 600px){
+	.containerMainTop {
+        width:50%;
+        margin-left: auto;
+        margin-right: auto ;
+} }
+
+.containerMainTopMatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 10px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 5rem 1rem 1rem 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (min-width: 1000px){
+	.containerMainTopMatch {
+        width:50%;
+        margin-left: auto;
+        margin-right: auto ;
+} }
+
+@media only screen and (min-width: 520){
+	.containerMainTopMatch {
+        width:100%;
+        margin-left: 1px ;
+        margin-right: 1px ;
+        
+} }
+
+@media only screen and (max-width: 650){
+	.matchName , .matchDate {
+        font-size : 1rem ;
+        color : red  
+        
+}  }
 
 .searchFormRow {
     display: flex;
@@ -2472,3 +2541,16 @@ textarea.md-textarea:focus:not([readonly]) {
         width: 620px;
     }
 }
+
+.containerMain button{
+    animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+    from {background-color: rgb(255, 255, 254);}
+    to {background-color: rgb(64, 201, 82);}
+}
+
+
+
