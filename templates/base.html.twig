@@ -5,12 +5,12 @@
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
     <title>{% block title %}TenCourt{% endblock %}</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    {# {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-{% endblock %} #}
     {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+{% endblock %}
+    {# {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-    {% endblock %}
+    {% endblock %} #}
 </head>
 <body>
 
