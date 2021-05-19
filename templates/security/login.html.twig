@@ -11,11 +11,12 @@
 </head>
 <body>
     {% block body %}
-    <div class="loginPage">
-        <form method="post">
-            <div class="containerLoginForm">                
+    <div class="homepageLogin">
+        
+           <div class="containerLoginWelcomeMessage">             
                 <img class="logo-login" src="{{asset('build/images/logo-tencourt.png')}}" />
-                <div class="containerMain"
+                <div class="containerMain">
+                <form method="post">
                 <h1 class="h3 mb-3 font-weight-normal loginTitleForm">Se connecter</h1>
                 <label class="loginLabelEmail" for="inputEmail">Adresse Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control LoginEmailInput" required autofocus>
@@ -33,7 +34,7 @@
                     </label>
                 </div>
             #}
-                <button class="btn btn-lg btn-primary LoginSubmitButton" type="submit">Connexion</button>
+                <button class="btn btn-lg btn-success LoginSubmitButton" type="submit">Connexion</button>
                 </div>
                 {% if app.user %}
                     <div class="mb-3 loginConnected">

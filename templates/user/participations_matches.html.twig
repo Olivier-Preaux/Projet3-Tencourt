@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="myMatchesTitle">Mes participations</h1>
+	<h1 class="topTitle my-0">Mes participations</h1>
 	<div class="containerMyMatchesBackground">
 		<div class='myBlockListMatches'>
 			<p class="CountParticipationMatchMessage">Nombre de participation(s):
@@ -12,14 +12,14 @@
 			</p>
 			{% for participation in participationsMatches|sort|reverse %}
 				<a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
-					<div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}}">
+					<div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}} color-success">
 						<p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>
-						<p class="matchListingDateMatch">Le
-							{{participation.eventDate|date("d/m/Y")}}
-							à
+						<p class="matchDate">Le
+							{{participation.eventDate|date("d/m/Y")}} - 
+						
 							{{participation.startHour|date("H")}}H{{participation.startHour|date("i")}}</p>
 						{% if app.user.id == participation.organizer.id %}
-							<p class="matchListingMessageOwner">Vous êtes l'organisateur de ce match</p>
+							<p class="matchListingMessageOwner h5">Vous êtes l'organisateur de ce match</p>
 						{% endif %}
 					</div>
 				</a>

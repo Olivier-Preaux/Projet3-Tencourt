@@ -1,44 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier le match Match • TenCourt{% endblock %}
+{% block title %}Modifier le match Match • TenCourt
+{% endblock %}
 
 {% block body %}
 
-<h1 class="editMatchTitleForm">Modfier mon match</h1>
-<div class='backgroundMatchEdit'>
-    <div class="editMatchPage">
-        <div class="editMatchForm">
-            {{ form_start(formEditMatch) }}
-            <div class="containerCreationMatchForm">
-                <div class="editMatchItemForm">
-                    {{ form_row(formEditMatch.name) }}
-                </div>
-                <div class="editMatchItemForm">
-                    {{ form_row(formEditMatch.level) }}
-                </div>
-                <div class="editMatchDateItemForm">
-                    {{ form_row(formEditMatch.eventDate) }}
-                </div>
-                <div class="editMatchDateItemForm">
-                    {{ form_row(formEditMatch.startHour) }}
-                </div>
-                <div class="editMatchDateItemForm">
-                    {{ form_row(formEditMatch.endHour) }}
-                </div>
-                <div class="editMatchItemForm">
-                    {{ form_row(formEditMatch.adress) }}
-                </div>
-                <div class="editMatchItemForm">
-                    {{ form_row(formEditMatch.description) }}
-                </div>
-              <div class="containerButtonEditMatch">
-                    <button class="UpdateButtonEditMatch">{{ button_label|default('Mettre à jour') }}</button>
-                    <a class="backButtonEditTennisMatch" href="{{ path('search_matches') }}">Retour</a>
-                </div>    
-            </div>
-            {{ form_end(formEditMatch) }}
-        </div>
-        <div class="blankEditionMatchPage"></div>
-    </div>
-</div>
+	<h1 class="topTitle my-0">Modfier mon match</h1>
+	<div class="background">
+		{# <div class="editMatchPage">
+			<div class="editMatchForm"> #}
+				{{ form_start(formEditMatch) }}
+                <div class="containerMainTop form-group text-center ">
+				{# <div class="containerCreationMatchForm"> #}
+					
+						{{ form_row(formEditMatch.name) }}					
+					
+						{{ form_row(formEditMatch.level) }}					
+					
+						{{ form_row(formEditMatch.eventDate) }}					
+					
+						{{ form_row(formEditMatch.startHour) }}					
+					
+						{{ form_row(formEditMatch.endHour) }}
+					
+						{{ form_row(formEditMatch.adress) }}					
+					
+						{{ form_row(formEditMatch.description) }}
+					</div>
+					<div class="col-6 mx-auto d-flex flex-column">
+						<button class="btn btn-success mb-2">{{ button_label|default('Mettre à jour') }}</button>
+						<a class="btn btn-success mb-5" href="{{ path('search_matches') }}">Retour</a>
+					</div>
+				</div>
+				{{ form_end(formEditMatch) }}
+			</div>
+			<div class="blankEditionMatchPage"></div>
+		</div>
+	</div>
 {% endblock %}

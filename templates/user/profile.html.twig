@@ -15,23 +15,25 @@ setTimeout('temp.style.display="none"', 3000);
 			</script>
 		{% endfor %}
 		<h1 class="myProfileTitle">Mon compte</h1>
-		<div class="MyProfile">
+		<div class="d-flex mt-5 pt-5">
+			<div class="d-flex flex-column w-50 justify-content-center align-items-center">
 			{% if user.avatar == null %}
 				<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-				<a class="ModifyAvatarButtonMyProfile" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
 			{% endif %}
 			{% if user.id <= 31 %}
 				<img class="playerPhoto" src="{{ user.avatar }}"/>
-				<a class="ModifyAvatarButtonMyProfile" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
 			{% else %}
 				<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-				<a class="ModifyAvatarButtonMyProfile" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
 			{% endif %}
+			</div>
 
-			<div class="myProfilePseudo">
+			<div class="h2 d-flex w-50 justify-content-center align-items-center">
 				{{ user.pseudo}}
 			</div>
 		</div>
@@ -74,17 +76,17 @@ setTimeout('temp.style.display="none"', 3000);
 	
 		<div class='col-6 mx-auto d-flex flex-column'>
 
-					<a class="btn btn-primary mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
+					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
 
 
 			
-					<a class="btn btn-primary mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
+					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
 
 
-					<a class="btn btn-primary mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
+					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
 
 
-					<a class="btn btn-primary mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Participations</a>
+					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Participations</a>
 
 
 					<a class="btn btn-warning mb-4 mx-auto col-xl-6 col-md-8 col-sl-12 border-0" href="{{ path('app_logout') }}">Déconnexion</a>

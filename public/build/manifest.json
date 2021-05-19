@@ -2,7 +2,6 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_core-js_modules_web_timers_js.js": "/build/vendors-node_modules_core-js_modules_web_timers_js.js",
   "build/images/backgroundImages/Login.jpg": "/build/images/backgroundImages/Login.76025629.jpg",
   "build/images/backgroundImages/subscription.jpg": "/build/images/backgroundImages/subscription.ab15fc15.jpg",
   "build/images/subscription.jpg": "/build/images/subscription.ab15fc15.jpg",

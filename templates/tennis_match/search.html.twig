@@ -30,13 +30,13 @@
 			</div>
 			<div class='col-6 mx-auto d-flex flex-column'>
 				<div>
-					<button class="btn btn-primary mb-2 mt-4">Rechercher</button>
+					<button class="btn btn-success mb-2 mt-4">Rechercher</button>
 				</div>
 				{# <div>
 								<a>{{ form_row(searchMatchForm.save)}}</a>
 							</div> #}
 				<div>
-					<a class="btn btn-primary mb-4 " href="{{ path('user_index') }}">Accueil</a>
+					<a class="btn btn-success mb-4 " href="{{ path('user_index') }}">Accueil</a>
 				</div>
 				{{ form_end(searchMatchForm) }}
 			</div>
@@ -85,7 +85,7 @@
 									<span class="titleItemMatchResult">Description:</span>
 									{{ match.description }}</p><br>
 							</div>
-							<a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="btn btn-primary mb-4 col-6 mx-auto ">Voir</a>
+							<a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="btn btn-success mb-4 col-6 mx-auto ">Voir</a>
 						</div>
 					{% else %}
 						<div class="containerResultSearchMessage">

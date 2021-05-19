@@ -27,6 +27,21 @@ a{
     color : white ;
 }
 
+a:hover , a:active { 
+	text-decoration: none ;
+    background-color: rgb(2, 153, 10);
+    border-radius : 10px ;
+}
+
+button:focus , button:hover , button:active , .btn:hover , .btn:active , .btn::selection {
+    background-color: rgb(2, 153, 10);
+    border-radius : 10px ;
+    outline: none;
+}
+
+
+  
+
 // FORM
 
 .form-control {
@@ -127,10 +142,24 @@ textarea.md-textarea:focus:not([readonly]) {
 
 .navButton {
     padding: 5px 2px 5px 2px;
-    // border : 2mm ridge rgba(79, 210, 100, .6);
+    border : 1px solid rgba(5, 100, 21, 0.6);
     border-radius: 10px;
     background-image: radial-gradient(rgb(4, 255, 4), rgb(79, 210, 100));
     // background-color : rgb(3, 192, 3);
+}
+
+// .backgroundDescriptionContainer
+
+.backgroundReverse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
 // MAIN TITLE 
@@ -152,16 +181,15 @@ textarea.md-textarea:focus:not([readonly]) {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
+    height: 100% ;
     background-image: url("../../assets/images/backgroundImages/Login2.jpg");
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;    
+    background-position:center;
+    background-size:cover;
 }
 
 .logo-login {
-    margin-left: auto;
+    margin-left: auto ;
     margin-right: auto;
     height: 230px;
     padding-bottom: 40px;
@@ -865,7 +893,7 @@ textarea.md-textarea:focus:not([readonly]) {
     margin: 10px;
     text-align: center;
     border-radius: 10px;
-    background-color: #d3721d;
+    background-color: #ff7700;
     border: solid 2px #aa5c18;
     height: 200px;
 
@@ -878,13 +906,13 @@ textarea.md-textarea:focus:not([readonly]) {
 }
 
 .matchListingOwn .matchName{    
-    background : rgb(160, 159, 159) ;
+    background : #aa5c18 ;
     padding : 1rem ;
     margin-left: auto ;
     margin-right: auto ;
     width : 80% ;
     color :rgb(0, 0, 0);
-    border-radius : 5px ;
+    border-radius : 10px ;
 }
 
 .matchListingTitleMatch {
@@ -1513,8 +1541,7 @@ textarea.md-textarea:focus:not([readonly]) {
 }
 
 @media only screen and (min-width: 600px){
-	.containerMain {
-        width:50%;
+	.containerMain {       
         margin-left: auto;
         margin-right: auto ;
 } }
@@ -1536,6 +1563,28 @@ textarea.md-textarea:focus:not([readonly]) {
 @media only screen and (min-width: 600px){
 	.containerMainTop {
         width:50%;
+        margin-left: auto;
+        margin-right: auto ;
+} }
+
+.containerMainLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 10px;
+    margin-bottom : 1rem ;
+    
+    
+    border: hsla(348, 2%, 93%, 0.92);    
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (min-width: 600px){
+	.containerMainLogin {       
         margin-left: auto;
         margin-right: auto ;
 } }
@@ -2095,11 +2144,11 @@ textarea.md-textarea:focus:not([readonly]) {
 }
 
 .TennisMatchShowMessage {
-    padding: 20px;
+    
     background-color: hsl(28, 76%, 47%);
-    border: solid 2px hsl(28, 75%, 38%);
+    
     border-radius: 10px;
-    margin: 20px 0px 10px 0px;
+    
     color: white;
     align-self: center;
     text-align: center;
@@ -2115,25 +2164,18 @@ textarea.md-textarea:focus:not([readonly]) {
     width: 100%;
 }
 
-.itemInteractionParticipeMatchComplete,
+.itemMatchComplete,
 .itemInteractionParticipeMatch {
     align-self: center;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
-    border-radius: 10px;
-    padding: 10px 60px;
-    width: 100%;
+    border-radius: 10px;    
     color: white;
-    margin: 10px;
 }
 
-.itemInteractionParticipeMatchComplete {
-    background-color: hsl(0, 70%, 43%);
-    border: solid 2px hsl(0, 69%, 34%);
-}
 
 .itemInteractionParticipeMatch {
     border: solid 2px rgb(13, 170, 26);
@@ -2438,17 +2480,13 @@ textarea.md-textarea:focus:not([readonly]) {
 
 .SendAMessageSubmitButton {
     text-align: center;
-    background-color: #40c952;
-    border: solid 2px #0d961f;
+   
     cursor: pointer;
-    border-radius: 10px;
-    padding: 10px 10px;
-    width: 310px;
-    margin: 10px;
+    
 }
 
 .SendAMessageSubmitButton input {
-    background-color: #40c952;
+    background-color: #4fd264;
     color: white;
     border: none;
 }
@@ -2485,9 +2523,9 @@ textarea.md-textarea:focus:not([readonly]) {
         width: 400px;
     }
 
-    .SendAMessageSubmitButton {
-        width: 400px;
-    }
+    // .SendAMessageSubmitButton {
+    //     width: 400px;
+    // }
 
     .backButtonSendMessage {
         width: 400px;
@@ -2507,9 +2545,9 @@ textarea.md-textarea:focus:not([readonly]) {
         width: 500px;
     }
 
-    .SendAMessageSubmitButton {
-        width: 500px;
-    }
+    // .SendAMessageSubmitButton {
+    //     width: 500px;
+    // }
 
     .backButtonSendMessage {
         width: 500px;
@@ -2529,9 +2567,9 @@ textarea.md-textarea:focus:not([readonly]) {
         width: 600px;
     }
 
-    .SendAMessageSubmitButton {
-        width: 600px;
-    }
+    // .SendAMessageSubmitButton {
+    //     width: 600px;
+    // }
 
     .backButtonSendMessage {
         width: 600px;

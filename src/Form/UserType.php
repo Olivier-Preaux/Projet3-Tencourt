@@ -70,11 +70,16 @@ class UserType extends AbstractType
                 'required' => false,
                 'label' => 'Telephone',
             ])
-            ->add('birthdate', DateType::class, [
-                'label' => false ,
-                'widget' => 'single_text',
-                'html5' => false ,
-                'format' => 'dd-MM-yyyy',
+            ->add('birthdate', DateType::class, [   
+                'label' => 'Date de naissance',
+                'widget' => 'single_text', 
+                'attr' => [
+                    'class' => 'form-control',
+                ],  
+                // 'label' => false ,
+                // 'widget' => 'single_text',
+                // 'html5' => false ,
+                // 'format' => 'dd-MM-yyyy',
                 'years' => range(2003, 1930),
             ])
             ->add('firstname', TextType::class, [
