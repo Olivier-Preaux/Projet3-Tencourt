@@ -18,7 +18,7 @@
 			<div class="homepageLogin">				
 				<div class="containerLoginWelcomeMessage">
 					<img class="logo-login" src="{{asset('build/images/logo-tencourt.png')}}"/>
-					<div class="containerMain">
+					<div class="containerMain mx-auto col-10 col-md-6 col-xl-3">
 						<p>Bonjour et bienvenue sur TEN'COURT</p>
 						<p>Trouver un adversaire en quelques cliques</p>
 						{% if app.user %}
@@ -33,7 +33,7 @@
 								<button class="submitConnexion" type="submit">
 									<a href="{{ path('app_login') }}">S'identifier</a>
 								</button>
-								<a class="subscriptionText" href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
+								<a class="subscriptionText p-2 " href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
 							</div>
 						{% endif %}
 						{#         </div> #}

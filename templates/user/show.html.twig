@@ -19,12 +19,12 @@ setTimeout('temp.style.display="none"', 3000);
 			<div class="d-flex flex-row justify-content-center">
 				<div class="text-center w-50">
 					{% if user.avatar == null %}
-						<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+						<img class="rounded-circle" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
 					{% endif %}
 					{% if user.id <= 31 %}
-						<img class="playerPhoto" src="{{ user.avatar }}"/>
+						<img class="rounded-circle" src="{{ user.avatar }}"/>
 					{% else %}
-						<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+						<img class="rounded-circle" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
 					{% endif %}
 				</div>
 				<div class="userPseudoShow d-flex flex-column w-50">
@@ -32,7 +32,7 @@ setTimeout('temp.style.display="none"', 3000);
 					<p class="userSexShowItem">{{ user.sex }}</p>
 				</div>
 			</div>
-			<div class="userDescriptionShow">
+			<div class="m-1 mt-4 mb-4">
 				<p>{{user.description}}</p>
 			</div>
 

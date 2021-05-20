@@ -15,12 +15,12 @@
         
            <div class="containerLoginWelcomeMessage">             
                 <img class="logo-login" src="{{asset('build/images/logo-tencourt.png')}}" />
-                <div class="containerMain">
+                <div class="containerMain col-10 mx-auto col-md-6 col-xl-4 pb-5">
                 <form method="post">
                 <h1 class="h3 mb-3 font-weight-normal loginTitleForm">Se connecter</h1>
-                <label class="loginLabelEmail" for="inputEmail">Adresse Email</label>
+                <label class="loginLabelEmail pb-2" for="inputEmail">Adresse Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control LoginEmailInput" required autofocus>
-                <label class="loginLabelPassword" for="inputPassword">Mot de passe</label>
+                <label class="loginLabelPassword pb-2" for="inputPassword">Mot de passe</label>
                 <input type="password" name="password" id="inputPassword" class="form-control LoginPasswordInput" required>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

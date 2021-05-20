@@ -29,12 +29,12 @@ a{
 
 a:hover , a:active { 
 	text-decoration: none ;
-    background-color: rgb(2, 153, 10);
+    background-color: rgb(158, 224, 161);
     border-radius : 10px ;
 }
 
 button:focus , button:hover , button:active , .btn:hover , .btn:active , .btn::selection {
-    background-color: rgb(2, 153, 10);
+    background-color: rgb(158, 224, 161);
     border-radius : 10px ;
     outline: none;
 }
@@ -211,11 +211,10 @@ textarea.md-textarea:focus:not([readonly]) {
 .homepageLogin {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;    
     background-image: url("../../assets/images/backgroundImages/Login2.jpg");
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100vh;    
     background-position: center;
     background-size: cover;
 }
@@ -1212,13 +1211,10 @@ textarea.md-textarea:focus:not([readonly]) {
 }
 
 .containerSearch {
-    padding-top: 100px;
-    align-items: center;
-}
-
-.containerSearch {
     display: flex;
     flex-direction: column;
+    margin-top : 5rem ;
+    align-items: center;
 }
 
 .containerPlayers {
@@ -1533,18 +1529,26 @@ textarea.md-textarea:focus:not([readonly]) {
     border-radius: 10px;
     
     border: hsla(348, 2%, 93%, 0.92);
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1rem 2rem 1rem 2rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
 }
 
-@media only screen and (min-width: 600px){
-	.containerMain {       
-        margin-left: auto;
-        margin-right: auto ;
-} }
+// @media only screen and (min-width: 600px){
+// 	.containerMain {  
+//         width : 50% ;     
+//         margin-left: auto;
+//         margin-right: auto ;
+// } }
+
+// @media only screen and (min-width: 1400px){
+// 	.containerMain {  
+//         width : 25% ;     
+//         margin-left: auto;
+//         margin-right: auto ;
+// } }
 
 .containerMainTop {
     display: flex;

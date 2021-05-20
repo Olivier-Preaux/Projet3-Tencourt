@@ -15,7 +15,7 @@ setTimeout('temp.style.display="none"', 3000);
 			</script>
 		{% endfor %}
 		<h1 class="myProfileTitle">Mon compte</h1>
-		<div class="d-flex mt-5 pt-5">
+		<div class="d-flex mt-5 pt-5 mx-auto col-10 col-md-6 col-xl-3">
 			<div class="d-flex flex-column w-50 justify-content-center align-items-center">
 			{% if user.avatar == null %}
 				<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
@@ -37,7 +37,7 @@ setTimeout('temp.style.display="none"', 3000);
 				{{ user.pseudo}}
 			</div>
 		</div>
-			<div class="containerMain">
+			<div class="containerMain mx-auto col-10 col-md-6 col-xl-3">
 				<div class="myProfileEmail">
 					<p class="myProfileEmailTitle">Email</p>
 					<p class="myProfileEmailValue">{{ user.email}}</p>

@@ -11,7 +11,7 @@
 				<span class="CountPariticipationMatchMessageAdd">{{ participationsMatches|length }}</span>
 			</p>
 			{% for participation in participationsMatches|sort|reverse %}
-				<a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
+				<a class="containerMatchlisting col-md-6 col-xl-4" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
 					<div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}} color-success">
 						<p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>
 						<p class="matchDate">Le
@@ -19,7 +19,7 @@
 						
 							{{participation.startHour|date("H")}}H{{participation.startHour|date("i")}}</p>
 						{% if app.user.id == participation.organizer.id %}
-							<p class="matchListingMessageOwner h5">Vous êtes l'organisateur de ce match</p>
+							<p class="matchListingMessageOwner h6">Vous êtes l'organisateur de ce match</p>
 						{% endif %}
 					</div>
 				</a>
