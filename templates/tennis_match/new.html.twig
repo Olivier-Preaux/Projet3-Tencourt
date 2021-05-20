@@ -3,13 +3,13 @@
 {% block title %}Nouveau Match • TenCourt{% endblock %}
 
 {% block body %}
-<h1 class="createMatchTitleForm">Créer un Match</h1>
-<div class='backgroundMatchCreate'>
 
-   <div class="createMatchPage">
-        <div class="createMatchForm">
+<div class='background'>
+<h1 class="topTitle my-0">Créer un Match</h1>
+   <div class="containerMainTop">
+        <div class="createMatchForm text-center">
             {{ form_start(tennismatchform) }}
-            <div class="containerMain">
+          
                 <div class="createMatchItemForm">
                     {{ form_row(tennismatchform.name) }}
                 </div>

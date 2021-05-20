@@ -46,10 +46,10 @@ setTimeout('temp.style.display="none"', 3000);
 				<div class="userContactShow">
 					{% if user.phone %}
 						<div class="userContactPhone">Numéro de telephone:</div>
-						<div class="userPhoneShow">{{user.phone}}</div>
+						<div class="userPhoneShow pl-2 pr-2">{{user.phone}}</div>
 					{% endif %}
 					<div class="userContactAddress">Adresse:</div>
-					<div class="userAddressShow">{{user.address ~ ' ' ~ user.postalcode ~ ' ' ~ user.city}}</div>
+					<div class="userAddressShow pl-2 pr-2">{{user.address ~ ' ' ~ user.postalcode ~ ' ' ~ user.city}}</div>
 				</div>
 
 				{% if user.slug != app.user.slug %}
