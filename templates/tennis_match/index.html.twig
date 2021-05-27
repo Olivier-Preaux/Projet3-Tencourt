@@ -28,8 +28,12 @@
                 <td>{{ tennis_match.adress }}</td>
                 <td>{{ tennis_match.description }}</td>
                 <td>
-                    <a href="{{ path('user_match_show', { 'tennisMatch' : tennis_match.id, 'user' : tennis_match.organizer.id }) }}">show</a>
-                    <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">edit</a>
+                    <a href="{{ path('user_match_show', { 'tennisMatch' : tennis_match.id, 'user' : tennis_match.organizer.id }) }}">
+                    show
+                    </a>
+                    <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">
+                    edit
+                    </a>
                 </td>
             </tr>
         {% else %}

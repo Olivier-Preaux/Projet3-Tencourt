@@ -74,21 +74,21 @@ setTimeout('temp.style.display="none"', 3000);
 				</div>
 			</div>
 	
-		<div class='col-6 mx-auto d-flex flex-column'>
-
+		<div class='col-6 col-md-4 mx-auto d-flex flex-column'>
+		
 					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
 
 
 			
 					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
 
-
+		
 					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
 
 
 					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Participations</a>
 
-
+		
 					<a class="btn btn-warning mb-4 mx-auto col-xl-6 col-md-8 col-sl-12 border-0" href="{{ path('app_logout') }}">Déconnexion</a>
 
 			
