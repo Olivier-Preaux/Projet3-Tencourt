@@ -39,8 +39,10 @@ class TennisMatchController extends AbstractController
         $tennisMatch = new TennisMatch();
         $form = $this->createForm(TennisMatchType::class, $tennisMatch);
         $form->handleRequest($request);
+       
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $entityManager = $this->getDoctrine()->getManager();
             $tennisMatch->setOrganizer($this->getUser());
             $tennisMatch->addParticipent($this->getUser());
