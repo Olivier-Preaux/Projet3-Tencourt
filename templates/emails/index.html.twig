@@ -18,12 +18,12 @@
 					<p class="emailToTitle">À:</p>
 					{{ form_widget(form.to, {'value':  user.email  }) }}
 				</div>
-				<div class='text-center'>
-					<p class="emailSubjectTitle">Sujet:</p> 
+				<div class='emailFrom'>
+					<p class="emailToTitle">Sujet:</p> 
 					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}
 				</div>
 				<div class='emailText'>
-					<p class="emailTextTitle">Message: </p>
+					<p class="emailTextTitle ">Message: </p>
 					{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}
 				</div>
 				<div class="col-6 mx-auto d-flex flex-column">

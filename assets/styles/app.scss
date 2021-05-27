@@ -2431,25 +2431,17 @@ textarea.md-textarea:focus:not([readonly]) {
 #mail_to,
 #mail_subject,
 #mail_html {
-    border: solid 1px #40c952;
-    padding-right: 70px;
-    padding-left: 70px;
+    border: solid 1px #40c952;    
     border-radius: 10px;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-
-
-
+  
 }
+
 
 #mail_html {
     height: 150px;
-    padding-right: 70px;
-    padding-left: 70px;
-}
-
-#mail_subject {
     padding-right: 70px;
     padding-left: 70px;
 }
