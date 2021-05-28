@@ -15,8 +15,9 @@
 				<a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
 					<div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}} color-success">
 						<p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>
-						<p class="matchDate">Le
-							{{participation.eventDate|date("d/m/Y")}} - 
+						<p class="matchDate h4">Le
+							{{participation.eventDate|date("d/m/Y")}} </p>
+						<p class="h5">
 						
 							{{participation.startHour|date("H")}}H{{participation.startHour|date("i")}}</p>
 						{% if app.user.id == participation.organizer.id %}
