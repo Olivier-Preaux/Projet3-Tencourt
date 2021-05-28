@@ -324,6 +324,7 @@ textarea.md-textarea:focus:not([readonly]) {
 
 .subscriptionText {
     text-align: center;
+    color : grey ;
 }
 
 .registrationItemForm div {
@@ -753,11 +754,6 @@ textarea.md-textarea:focus:not([readonly]) {
     background-color: #40c952;
     border: solid 2px #0d961f;
     cursor: pointer;
-    border-radius: 10px;
-    padding: 11px 10px;
-    width: 90%;
-    margin: 10px;
-    color: white;
 }
 
 .updatePasswordItemForm div {
@@ -2584,6 +2580,17 @@ textarea.md-textarea:focus:not([readonly]) {
     from {background-color: rgb(255, 255, 254);}
     to {background-color: rgb(64, 201, 82);}
 }
+
+.subscriptionText{
+    animation-name: fontanim;
+  animation-duration: 8s;
+}
+
+@keyframes fontanim {
+    from {color: rgb(255, 255, 254);}
+    to {color:grey}
+}
+
 
 
 

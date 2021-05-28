@@ -38,13 +38,13 @@
         <div class="editionItemForm">
             {{ form_row(editUserForm.description,{ 'attr': {'cols': '30', 'rows': '10' } }) }}
         </div>
-        <div class="editionItemForm">
+        <div class="editionItemForm mx-auto ">
             {{ form_row(editUserForm.update) }}
         </div>
         {{ form_end(editUserForm) }}
-            <a class="backButtonEditProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
-            <a class="EditAccueilButton" href="{{ path('user_index') }}">Accueil</a>
-            <div class="DeleteButtonEditProfile">{{ include('user/_delete_form.html.twig') }}</div>
+            <a class="backButtonEditProfile col-6 mx-auto" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+            <a class="EditAccueilButton col-6 mx-auto" href="{{ path('user_index') }}">Accueil</a>
+            <div class="DeleteButtonEditProfile col-6 mx-auto">{{ include('user/_delete_form.html.twig') }}</div>
             {# <a class="DeleteButtonEditProfile" href="{{ path('user_delete', {'id': user.id}) }}">Supprimer</a> #}
     </div>
 </div>
