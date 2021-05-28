@@ -4,14 +4,15 @@
 {% endblock %}
 
 {% block body %}
+<div class="containerMyMatchesBackground">
 	<h1 class="topTitle my-0">Mes participations</h1>
-	<div class="containerMyMatchesBackground">
-		<div class='myBlockListMatches'>
-			<p class="CountParticipationMatchMessage">Nombre de participation(s):
+	<div class='containerMainTopMatch form-group d-flex flex-column align-items-center'>
+		
+			<p class="CountCreationMatchMessage">Nombre de participation(s):
 				<span class="CountPariticipationMatchMessageAdd">{{ participationsMatches|length }}</span>
 			</p>
 			{% for participation in participationsMatches|sort|reverse %}
-				<a class="containerMatchlisting col-md-6 col-xl-4" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
+				<a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
 					<div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}} color-success">
 						<p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>
 						<p class="matchDate">Le
@@ -24,7 +25,7 @@
 					</div>
 				</a>
 			{% endfor %}
-			<a class="backButtonParticipationMatchProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+			<a class="btn btn-success mt-4 mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
 		</div>
 		<div class="blankMyProfileShowMatchPage"></div>
 	{% endblock %}
