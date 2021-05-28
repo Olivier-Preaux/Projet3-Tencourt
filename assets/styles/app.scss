@@ -652,8 +652,8 @@ textarea.md-textarea:focus:not([readonly]) {
 #avatar_update {
     background-color: hsl(128, 56%, 52%);
     color: white;
-    border: none;
-    font-size: 0.8rem;
+    border: solid 2px hsl(128, 84%, 32%);
+    
 }
 
 .myProfileAvatarEdit a {
@@ -1930,7 +1930,6 @@ textarea.md-textarea:focus:not([readonly]) {
 #tennis_match_startHour,
 #tennis_match_eventDate,
 #tennis_match_level {
-    
     border: solid 1px #40c952;
     margin-left: auto;
     margin-right: auto;
@@ -2007,7 +2006,7 @@ textarea.md-textarea:focus:not([readonly]) {
     #tennis_match_startHour,
     #tennis_match_eventDate,
     #tennis_match_level {
-        width: 90%;
+        width: 100%;
     }
 
     .createMatchSaveItemForm button {

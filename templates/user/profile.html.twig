@@ -15,85 +15,85 @@ setTimeout('temp.style.display="none"', 3000);
 			</script>
 		{% endfor %}
 		<h1 class="myProfileTitle">Mon compte</h1>
-		<div class="d-flex mt-5 pt-5 mx-auto col-10 col-md-6 col-xl-3">
+		<div class="containerMainTop mx-auto col-10 col-md-6 col-xl-3">
+		<div class="d-flex mt-1 pt-1 mx-auto mb-4">
 			<div class="d-flex flex-column w-50 justify-content-center align-items-center">
-			{% if user.avatar == null %}
-				<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-				<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				{% if user.avatar == null %}
+					<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+					<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-			{% endif %}
-			{% if user.id <= 31 %}
-				<img class="playerPhoto" src="{{ user.avatar }}"/>
-				<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				{% endif %}
+				{% if user.id <= 31 %}
+					<img class="playerPhoto" src="{{ user.avatar }}"/>
+					<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-			{% else %}
-				<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-				<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+				{% else %}
+					<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+					<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-			{% endif %}
+				{% endif %}
 			</div>
 
-			<div class="h2 d-flex w-50 justify-content-center align-items-center">
+			<div class="h2 d-flex w-50 justify-content-center align-items-center ml-4">
 				{{ user.pseudo}}
 			</div>
 		</div>
-			<div class="containerMain mx-auto col-10 col-md-6 col-xl-3">
-				<div class="myProfileEmail">
-					<p class="myProfileEmailTitle">Email</p>
-					<p class="myProfileEmailValue">{{ user.email}}</p>
-				</div>
-				{% if user.firstname %}
-					<div class="myProfileFirstname">
-						<p class="myProfileFirstnameTitle">Prénom</p>
-						<p class="myProfileFirstnameValue">{{user.firstname}}</p>
-					</div>
-				{% endif %}
-				{% if user.lastname %}
-					<div class="myProfileName">
-						<p class="myProfileNameTitle">Nom</p>
-						<p class="myProfileNameValue">{{user.lastname}}</p>
-					</div>
-				{% endif %}
-				<div class="myProfileBirthday">
-					<p class="myProfileBirthdateTitle">Date de naissance</p>
-					<p class="myProfileBirthdayValue">{{ user.birthdate|date('d/m/Y') }}</p>
-				</div>
-				{% if user.phone %}
-					<div class="myProfilePhone">
-						<p class="myProfilePhoneTitle">Numero de téléphone</p>
-						<p class="myProfilePhoneValue">{{ user.phone }}</p>
-					</div>
-				{% endif %}
-				<div class="myProfileAdress">
-					<p class="myProfileAddressTitle">Adresse postale</p>
-					<p class="myProfileAddressValue">
-						{{ user.address}}
-						{{ user.postalcode}}
-						{{ user.city }}
-					</p>
-				</div>
+		
+			<div class="myProfileEmail">
+				<p class="myProfileEmailTitle">Email</p>
+				<p class="myProfileEmailValue">{{ user.email}}</p>
 			</div>
-	
+			{% if user.firstname %}
+				<div class="myProfileFirstname">
+					<p class="myProfileFirstnameTitle">Prénom</p>
+					<p class="myProfileFirstnameValue">{{user.firstname}}</p>
+				</div>
+			{% endif %}
+			{% if user.lastname %}
+				<div class="myProfileName">
+					<p class="myProfileNameTitle">Nom</p>
+					<p class="myProfileNameValue">{{user.lastname}}</p>
+				</div>
+			{% endif %}
+			<div class="myProfileBirthday">
+				<p class="myProfileBirthdateTitle">Date de naissance</p>
+				<p class="myProfileBirthdayValue">{{ user.birthdate|date('d/m/Y') }}</p>
+			</div>
+			{% if user.phone %}
+				<div class="myProfilePhone">
+					<p class="myProfilePhoneTitle">Numero de téléphone</p>
+					<p class="myProfilePhoneValue">{{ user.phone }}</p>
+				</div>
+			{% endif %}
+			<div class="myProfileAdress">
+				<p class="myProfileAddressTitle">Adresse postale</p>
+				<p class="myProfileAddressValue">
+					{{ user.address}}
+					{{ user.postalcode}}
+					{{ user.city }}
+				</p>
+			</div>
+		</div>
+
 		<div class='col-6 col-md-4 mx-auto d-flex flex-column'>
-		
-					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
+
+			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
 
 
-			
-					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
-
-		
-					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
+			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
 
 
-					<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Participations</a>
+			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
 
-		
-					<a class="btn btn-warning mb-4 mx-auto col-xl-6 col-md-8 col-sl-12 border-0" href="{{ path('app_logout') }}">Déconnexion</a>
 
-			
-				<div class="blankMyProfilePage"></div>
-			
+			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Participations</a>
+
+
+			<a class="btn btn-warning mb-4 mx-auto col-xl-6 col-md-8 col-sl-12 border-0" href="{{ path('app_logout') }}">Déconnexion</a>
+
+
+			<div class="blankMyProfilePage"></div>
+
 		</div>
 	</div>
-		{% endblock %}
+{% endblock %}
