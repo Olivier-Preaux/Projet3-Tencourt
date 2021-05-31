@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="backgroundReverse">
+	<div class="containerMyMatchesBackground mx-auto col-md-6">
 		{% for message in app.flashes('success') %}
 			<div id="updateMessageSuccess">
 				<p class="successModifiedMessage">{{ message }}</p>
@@ -16,8 +16,8 @@ setTimeout('temp.style.display="none"', 3000);
 			</script>
 		{% endfor %}
 		<div>
-			<div class="d-flex flex-row justify-content-center mt-4">
-				<div class="text-center w-50">
+			<div class="d-flex flex-row justify-content-center my-4">
+				<div class="text-center w-50 mt-4">
 					{% if user.avatar == null %}
 						<img class="rounded-circle" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
 					{% endif %}
@@ -27,7 +27,7 @@ setTimeout('temp.style.display="none"', 3000);
 						<img class="rounded-circle" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
 					{% endif %}
 				</div>
-				<div class="userPseudoShow d-flex flex-column w-50">
+				<div class="userPseudoShow d-flex flex-column w-50 mt-4">
 					<p class="userPseudoShowItem">{{ user.pseudo }}</p>
 					<p class="userSexShowItem">{{ user.sex }}</p>
 				</div>
