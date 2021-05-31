@@ -48,7 +48,7 @@ class MatchControllerTest extends WebTestCase
     //     $form['tennis_match[description]'] = 'Description';
         
     //     $crawler= $client->submit($form);
-
+    //     var_dump($client->getResponse()->getContent());
        
     //     $this->assertEquals(302, $client->getResponse()->getStatusCode());
     //     $crawler = $client->followRedirect();
@@ -97,6 +97,8 @@ class MatchControllerTest extends WebTestCase
     //     $form['tennis_match[name]'] = $name; 
 
     //     $crawler= $client->submit($form);
+
+    //     var_dump($client->getResponse()->getContent());
     //     $this->assertEquals(302, $client->getResponse()->getStatusCode());
     //     $crawler = $client->followRedirect();
     //     $this->assertEquals(200, $client->getResponse()->getStatusCode());
@@ -112,7 +114,7 @@ class MatchControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
-        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $testUser = $userRepository->findOneByEmail('test1@monsite.com');
         $client->loginUser($testUser);
 
         $em = self::$container->get('doctrine');
@@ -127,7 +129,7 @@ class MatchControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
-        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $testUser = $userRepository->findOneByEmail('test1@monsite.com');
         $client->loginUser($testUser);
 
         $em = self::$container->get('doctrine');

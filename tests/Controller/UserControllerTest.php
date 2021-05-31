@@ -65,7 +65,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::$container->get(UserRepository::class);
-        $testUser = $userRepository->findOneByEmail('virginie.giraud@sfr.fr');
+        $testUser = $userRepository->findOneByEmail('test1@monsite.com');
         $client->loginUser($testUser);
 
         $crawler = $client->request('GET', '/users/pseudotest/edit');

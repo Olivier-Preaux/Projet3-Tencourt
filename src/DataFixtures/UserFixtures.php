@@ -85,7 +85,7 @@ class UserFixtures extends Fixture
 
             $contributor->setSex($genre == 'male' ? 'Homme' : 'Femme');
             $contributor->setPseudo($genre =='male' ? $this->faker->firstNameMale : $this->faker->firstNameFemale);
-            $contributor->setEmail($this->faker->email);
+            $contributor->setEmail('test'.$i.'@monsite.com');
             $contributor->setRoles(['ROLE_CONTRIBUTOR']);
             
            

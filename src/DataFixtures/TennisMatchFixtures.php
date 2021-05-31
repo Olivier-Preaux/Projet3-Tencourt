@@ -14,12 +14,10 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
     private $cities = [
         'Paris',
         'Reims',
-        'Epernay',
         'Bordeaux',
         'Lyon',
         'Toulouse',
         'Marseille',
-        'Brest',
         'Lille',
     ];
 
@@ -46,7 +44,7 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                     'Match pour Débutant', 'Match experimenté', 'Entrainement',
                     'Match féminin', 'Match masculin',
                 )));
-                $match->setDescription($faker->paragraph());
+                $match->setDescription($faker->sentence(20));
                 $randKey = array_rand($this->cities, 1);
                 $match->setAdress($this->cities[$randKey]);
                 $match->setOrganizer($this->getReference('admin'));
