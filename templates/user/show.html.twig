@@ -42,7 +42,7 @@ setTimeout('temp.style.display="none"', 3000);
 				<p class="userInformationItem userLocalisationShow">{{user.city}}</p>
 				<p class="userInformationItem userLevelShow">{{user.level}}</p>
 			</div>
-			<div class="containerMain  align-items-center d-flex flex-column">
+			<div class="containerMain  d-flex flex-column">
 				<div class="userContactShow">
 					{% if user.phone %}
 						<div class="userContactPhone">Numéro de telephone:</div>
@@ -53,11 +53,11 @@ setTimeout('temp.style.display="none"', 3000);
 				</div>
 
 				{% if user.slug != app.user.slug %}
-					<div class="w-50">
+					<div class="w-50 mx-auto">
 						<a class="btn btn-success mt-2 " href="{{ path('user_mail', {'slug': user.slug}) }}">Contacter</a>
 					</div>
 				{% endif %}
-					<div class="w-50">
+					<div class="w-50 mx-auto">
 						<a class="btn btn-success mt-2" href="{{ path('search_users')}}">Retour</a>
 					</div>
 			</div>
