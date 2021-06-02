@@ -4,11 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<div class="containerMyProfile">
+	<div class="background">
 		{% for message in app.flashes('success') %}
-			<div id="updateMessageSuccess">
+			<div= id="updateMessageSuccess">
 				<p class="successModifiedMessage">{{ message }}</p>
-			</div>
+			</div=>
 			<script language='javascript'>
 				temp = document.getElementById('updateMessageSuccess');
 setTimeout('temp.style.display="none"', 3000);
@@ -16,29 +16,29 @@ setTimeout('temp.style.display="none"', 3000);
 		{% endfor %}
 		<h1 class="topTitle my-0">Mon compte</h1>
 		<div class="containerMainTop">
-		<div class="d-flex mt-1 pt-1 mx-auto mb-4">
-			<div class="d-flex flex-column w-50 justify-content-center align-items-center">
-				{% if user.avatar == null %}
-					<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-					<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+			<div class="d-flex mt-1 pt-1 mx-auto mb-4">
+				<div class="d-flex flex-column w-50 justify-content-center align-items-center">
+					{% if user.avatar == null %}
+						<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+						<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-				{% endif %}
-				{% if user.id <= 31 %}
-					<img class="playerPhoto" src="{{ user.avatar }}"/>
-					<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+					{% endif %}
+					{% if user.id <= 31 %}
+						<img class="playerPhoto" src="{{ user.avatar }}"/>
+						<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-				{% else %}
-					<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-					<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
+					{% else %}
+						<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+						<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 
-				{% endif %}
+					{% endif %}
+				</div>
+
+				<div class="h2 d-flex w-50 justify-content-center align-items-center ml-4">
+					{{ user.pseudo}}
+				</div>
 			</div>
 
-			<div class="h2 d-flex w-50 justify-content-center align-items-center ml-4">
-				{{ user.pseudo}}
-			</div>
-		</div>
-		
 			<div class="myProfileEmail">
 				<p class="myProfileEmailTitle">Email</p>
 				<p class="myProfileEmailValue">{{ user.email}}</p>
@@ -83,7 +83,7 @@ setTimeout('temp.style.display="none"', 3000);
 
 		<div class='col-6 col-md-4 mx-auto d-flex flex-column'>
 
-			
+
 			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_matches', {'slug': user.slug}) }}">Matchs Créés</a>
 
 

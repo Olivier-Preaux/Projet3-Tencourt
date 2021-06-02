@@ -21,12 +21,12 @@
                 <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : match.id }) }}">
                     <div class="matchListingOwn">
                         <p class="matchName">{{ match.name }}</p>
-                        <p class="matchDate">Le {{match.eventDate|date("d/m/Y")}} </p>
+                        <p class="matchDate h4 mt-3">Le {{match.eventDate|date("d/m/Y")}} </p>
                         <p class="matchDate h6"> {{match.startHour|date("H")}}H{{match.startHour|date("i")}}</p>
                     </div>
                 </a>
             {% endfor %}
-            <a class="btn btn-success mb-2 mx-auto col-6" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+            <a class="btn btn-success mb-2 mt-3 mx-auto col-6" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
         
     </div>
     <div class="blankMyProfileShowMatchPage"></div>
