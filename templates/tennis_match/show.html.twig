@@ -112,7 +112,7 @@ setTimeout('temp.style.display="none"', 3000);
 			{% endif %}
 
 		
-			<btn class="btn btn-success" href="{{ path('search_matches') }}">Retour</btn>
+			<a class="btn btn-success" href="{{ path('user_profile', {'slug': app.user.slug}) }}">Retour</a>
 			<div class="blankTennisMatchDetailPage"></div>
 		</div>
 	</div>
