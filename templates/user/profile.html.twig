@@ -17,16 +17,13 @@ setTimeout('temp.style.display="none"', 3000);
 		<h1 class="topTitle my-0">Mon compte</h1>
 		<div class="containerMainTop">
 			<div class="d-flex mt-1 pt-1 mx-auto mb-4">
-				<div class="d-flex flex-column w-50 justify-content-center align-items-center">
-					{% if user.avatar == null %}
-						<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-						<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
-
-					{% endif %}
+				<div class="d-flex flex-column w-50 justify-content-center align-items-center">					
 					{% if user.id <= 31 %}
 						<img class="playerPhoto" src="{{ user.avatar }}"/>
-						<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
-
+						<a class="text-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>					
+					{% elseif user.avatar == null %}
+						<img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+						<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
 					{% else %}
 						<img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
 						<a class="ModifyAvatarButtonMyProfile color-secondary" id="editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
@@ -73,10 +70,11 @@ setTimeout('temp.style.display="none"', 3000);
 					{{ user.city }}
 				</p>
 			</div>
-			
-			{# <a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
+			{% if user.email != 'test@monsite.com' %}
+			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
 			<a class="btn btn-success mb-2 mx-auto col-xl-6 col-md-8 col-sl-12" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mot de passe</a>
-			 #}
+			
+			 {% endif %}
 		</div>
 
 		<div class='col-6 col-md-4 mx-auto d-flex flex-column'>
