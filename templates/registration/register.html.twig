@@ -11,8 +11,8 @@
 </head>
 <body>
     {% block body %}
-        <div class="subscriptionPage">
-            <div class="subscriptionForm">
+        <div class="backgroundAllUsers">
+            <div class="containerMainTop mt-3">
                 {% for flashError in app.flashes('verify_email_error') %}
                     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                 {% endfor %}

@@ -27,6 +27,11 @@ a{
     color : white ;
 }
 
+.margin-top
+{
+    margin-top: 5rem ;
+}
+
 a:hover , a:active { 
 	text-decoration: none ;
     background-color: rgb(158, 224, 161);
@@ -169,7 +174,7 @@ textarea.md-textarea:focus:not([readonly]) {
     padding: 1rem;
     text-align: center;
     background-color: HSL(127, 56%, 52%);
-    // margin-top: 0;
+    z-index:10;
     font-size: 1.5rem;
     position: fixed;
     width: 100%;
@@ -873,8 +878,8 @@ textarea.md-textarea:focus:not([readonly]) {
     margin-bottom: 5px;
     text-align: center;
     border-radius: 10px;
-    background-color: #40c952;
-    border: solid 2px hsl(128, 84%, 32%);
+    background-color: #98d4a0;
+    border: solid 2px hsl(128, 36%, 55%);
     height: 200px;
 
     display: flex;
@@ -888,10 +893,9 @@ textarea.md-textarea:focus:not([readonly]) {
     margin-bottom: 5px;
     text-align: center;
     border-radius: 10px;
-    background-color: #ff7700;
-    border: solid 2px #aa5c18;
+    background-color: #fda150;
+    border: solid 2px #ff9334;
     height: 200px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -901,13 +905,15 @@ textarea.md-textarea:focus:not([readonly]) {
 }
 
 .matchListingOwn .matchName{    
-    background : #aa5c18 ;
+    background : #ff7a05 ;
     padding : 1rem ;
     margin-left: auto ;
     margin-right: auto ;
     width : 80% ;
-    color :rgb(0, 0, 0);
     border-radius : 10px ;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
 .matchListingTitleMatch {
@@ -929,8 +935,9 @@ textarea.md-textarea:focus:not([readonly]) {
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #aa5c18;
-    color: #d3721d;
+    background-color: rgb(253,161,80);;
+    border : 2px solid #ffbb3c;
+    color: #ffffff;
 }
 
 .backButtonParticipationMatchProfile,
@@ -976,7 +983,7 @@ textarea.md-textarea:focus:not([readonly]) {
 
     .CountCreationMatchMessage,
     .CountParticipationMatchMessage {
-        width: 85%;
+        width: 100%;
     }
 
     .blankMyProfileShowMatchPage {
@@ -1239,15 +1246,21 @@ textarea.md-textarea:focus:not([readonly]) {
     color: black;
     margin: 10px;
     border-radius: 10px;
-    border: solid 1px rgb(189, 188, 188);
+    // border: solid 1px rgb(189, 188, 188);
     padding: 50px 20px;
     width: 320px;
 
     background-color: rgba(255, 255, 255, 1);
     text-decoration: none;
-    -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    // -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    // -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    // box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
 .container_1_players {
@@ -1558,6 +1571,7 @@ textarea.md-textarea:focus:not([readonly]) {
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px -9px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
 }
 
 @media only screen and (min-width: 600px){
@@ -2144,8 +2158,7 @@ textarea.md-textarea:focus:not([readonly]) {
 
 .TennisMatchShowMessage {
     
-    background-color: hsl(28, 76%, 47%);
-    
+    background-color: rgb(253,161,81);
     border-radius: 10px;
     
     color: white;

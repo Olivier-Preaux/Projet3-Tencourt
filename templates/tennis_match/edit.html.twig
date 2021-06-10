@@ -11,25 +11,13 @@
 			<div class="editMatchForm"> #}
 				{{ form_start(formEditMatch) }}
                 <div class="containerMainTop form-group text-center ">
-				{# <div class="containerCreationMatchForm"> #}
-					
-						{{ form_row(formEditMatch.name) }}					
-					
-						{{ form_row(formEditMatch.level) }}					
-					
-						{{ form_row(formEditMatch.eventDate) }}					
-					
-						{{ form_row(formEditMatch.startHour) }}					
-					
-						{{ form_row(formEditMatch.endHour) }}
-					
-						{{ form_row(formEditMatch.adress) }}					
-					
-						{{ form_row(formEditMatch.description) }}
+				
+						{{ form_widget(formEditMatch) }}
+						
 					</div>
 					<div class="col-6 mx-auto d-flex flex-column">
-						<button class="btn btn-success mb-2 col-6 mx-auto">{{ button_label|default('Mettre à jour') }}</button>
-						<a class="btn btn-success mx-auto mb-5 col-6" href="{{ path('search_matches') }}">Retour</a>
+						<button class="btn btn-success mb-2 ">{{ button_label|default('Mettre à jour') }}</button>
+						<a class="btn btn-success mx-auto mb-5 " href="{{ path('search_matches') }}">Retour</a>
 					</div>
 				</div>
 				{{ form_end(formEditMatch) }}

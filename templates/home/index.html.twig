@@ -10,12 +10,15 @@
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
+			<style> 
+			body{overflow:hidden}
+			</style>
 		{% endblock %}
 	</head>
 	<body>
 
 		{% block body %}
-			<div class="homepageLogin">				
+			<div class="homepageLogin" >				
 				<div class="containerLoginWelcomeMessage">
 					<img class="logo-login" src="{{asset('build/images/logo-tencourt.png')}}"/>
 					<div class="containerMain mx-auto col-10 col-md-6 col-xl-3">

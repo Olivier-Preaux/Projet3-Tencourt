@@ -15,11 +15,13 @@
 			<div>
 				{{ form_row(searchMatchForm.level) }}
 			</div>
-			<div>
-				{{ form_row(searchMatchForm.min) }}
-			</div>
-			<div>
-				{{ form_row(searchMatchForm.max) }}
+			<div class="d-flex flex-row">
+				<div class="col-6">
+					{{ form_row(searchMatchForm.min) }}
+				</div>
+				<div class="col-6">
+					{{ form_row(searchMatchForm.max) }}
+				</div>
 			</div>
 			<div>
 				{{ form_row(searchMatchForm.startHour) }}
