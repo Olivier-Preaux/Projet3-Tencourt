@@ -44,7 +44,7 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                     'Match pour Débutant', 'Match experimenté', 'Entrainement',
                     'Match féminin', 'Match masculin',
                 )));
-                $match->setDescription($faker->sentence(20));
+                $match->setDescription($faker->sentence(10));
                 $randKey = array_rand($this->cities, 1);
                 $match->setAdress($this->cities[$randKey]);
                 $match->setOrganizer($this->getReference('admin'));

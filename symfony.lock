@@ -29,6 +29,9 @@
     "composer/xdebug-handler": {
         "version": "1.4.4"
     },
+    "dbrekelmans/bdi": {
+        "version": "0.3"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {

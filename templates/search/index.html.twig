@@ -40,7 +40,7 @@
 			{% if not users is same as null %}
 				
 					<h2 class='resultSearch'>Résultat de votre Recherche</h2>
-					<div class='searchcontainer'>
+					<div class='margin-top d-flex flex-direction-row flex-wrap justify-content-around'>
 					{% for user in users %}
 						<a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
 							<div class='players'>

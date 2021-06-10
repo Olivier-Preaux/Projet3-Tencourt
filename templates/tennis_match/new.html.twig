@@ -10,27 +10,7 @@
         <div class="createMatchForm text-center">
             {{ form_start(tennismatchform) }}
           
-                <div class="createMatchItemForm">
-                    {{ form_row(tennismatchform.name) }}
-                </div>
-                <div class="createMatchItemForm">
-                    {{ form_row(tennismatchform.level) }}
-                </div>
-                <div class="createMatchDateItemForm">
-                    {{ form_row(tennismatchform.eventDate) }}
-                </div>
-                <div class="createMatchDateItemForm">
-                    {{ form_row(tennismatchform.startHour) }}
-                </div>
-                <div class="createMatchDateItemForm">
-                    {{ form_row(tennismatchform.endHour) }}
-                </div>
-                <div class="createMatchItemForm">
-                    {{ form_row(tennismatchform.adress) }}
-                </div>
-                <div class="createMatchItemForm">
-                    {{ form_row(tennismatchform.description) }}
-                </div>
+              {{ form_widget(tennismatchform) }}
                 <div class="createMatchSaveItemForm">
                     <button class="btn col-6">{{ button_label|default('Créer le match') }}</button>
                 </div>
