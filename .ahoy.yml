@@ -25,8 +25,7 @@ commands:
   test:
     cmd: |
       ahoy bd-test
-      export SYMFONY_DEPRECATIONS_HELPER=weak &&
-          php bin/phpunit
+      bin/phpunit --testdox
     usage: Start all tests .
   
   bd-test:
